@@ -11,7 +11,5 @@ public class Main {
         Operation answer = new Operation(store.getNum1(), store.getNum2(), store.getFunction());
 
         System.out.println(answer);
-
-        // https://codehs.com/sandbox/id/suncalc-v3-testing-DHoVIa/run
     }
 }
