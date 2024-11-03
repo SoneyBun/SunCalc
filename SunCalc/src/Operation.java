@@ -31,7 +31,7 @@ public class Operation {
                 }
                 return ("" + undefinedDivideByZero);
             case "%" : return (n1 + " % " + n2 + " = " + (n1 % n2));
-            case "||" : return ("|" + n1 + "| = " + (n1 * -1));
+            case "||" : return ("|" + n1 + "| = " + Math.abs(n1));
             case "!" :
                 BigInteger factorial = BigInteger.ONE;
 
@@ -98,10 +98,13 @@ public class Operation {
             case "rt" : return (n1 + "^(1.0/" + n2 + ") = " + Math.pow(n1, (1 / n2)));
             case "sin" : return ("sin(" + n1 + ") = " + Math.sin(n1));
             case "asin" : return ("asin(" + n1 + ") = " + Math.asin(n1));
+            case "sinh" : return ("sinh(" + n1 + ") = " + Math.sinh(n1));
             case "cos" : return ("cos(" + n1 + ") = " + Math.cos(n1));
             case "acos" : return ("acos(" + n1 + ") = " + Math.acos(n1));
+            case "cosh" : return ("cosh(" + n1 + ") = " + Math.cosh(n1));
             case "tan" : return ("tan(" + n1 + ") = " + Math.tan(n1));
             case "atan" : return ("atan(" + n1 + ") = " + Math.atan(n1));
+            case "tanh" : return ("tanh(" + n1 + ") = " + Math.tanh(n1));
         }
         return ("" + unknownFunction);
     }
