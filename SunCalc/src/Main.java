@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("\nSunCalc V3\n\nEnter your terms in the format\nN1 N2 F\nOr\nN1 F\nFor a list of operators, view the following list https://pdf.ac/30ffTt");
+        System.out.println("SunCalc V3\n\nEnter your terms in the format\nN1 N2 F\nOr\nN1 F\nFor a list of functions, view the following list https://bit.ly/SunCalcFunctions");
         String terms = scan.nextLine();
 
         Storing store = new Storing((terms));
