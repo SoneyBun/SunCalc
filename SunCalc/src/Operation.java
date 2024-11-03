@@ -1,0 +1,108 @@
+import java.lang.Math;
+import java.math.BigInteger;
+
+public class Operation {
+    private final double n1, n2;
+    private final String fn;
+
+    public Operation(double n1, double n2, String fn) {
+        this.n1 = n1;
+        this.n2 = n2;
+        this.fn = fn;
+    }
+
+    private final Report unknownFunction = assignReport("Error - Unknown Function");
+    private final Report undefinedDivideByZero = assignReport("Undefined - Dividing By Zero");
+    private final Report undefinedFactorialOfANegative = assignReport("Undefined - Factorial Of A Negative");
+    private final Report factorialOfADouble = assignReport("Error - Factorial Of A Double");
+
+    public Report assignReport(String reason) {
+        return new Report(reason);
+    }
+
+    public String toString() {
+        switch (fn.toLowerCase()) {
+            case "+" : return (n1 + " + " + n2 + " = " + (n1 + n2));
+            case "-" : return (n1 + " - " + n2 + " = " + (n1 - n2));
+            case "*" : return (n1 + " * " + n2 + " = " + (n1 * n2));
+            case "/" :
+                if(n2 != 0) {
+                    return (n1 + " / " + n2 + " = " + (n1 / n2));
+                }
+                return ("" + undefinedDivideByZero);
+            case "%" : return (n1 + " % " + n2 + " = " + (n1 % n2));
+            case "||" : return ("|" + n1 + "| = " + (n1 * -1));
+            case "!" :
+                BigInteger factorial = BigInteger.ONE;
+
+                if(n1 >= 0) {
+                    if(n1 == (int) n1) {
+                        for(int i = 1; i <= (int) n1; i++) {
+                            factorial = factorial.multiply(BigInteger.valueOf(i));
+                        }
+                        return (n1 + "! = " + factorial);
+                    }
+                    else {
+                        int truncatedN1 = (int) (n1);
+                        int roundedN1 = (int) (n1 + .5);
+
+                        BigInteger factorialTruncatedN1 = BigInteger.ONE;
+                        BigInteger factorialRoundedN1 = BigInteger.ONE;
+
+                        for(int i = 1; i <= truncatedN1; i++) {
+                            factorialTruncatedN1 = factorialTruncatedN1.multiply(BigInteger.valueOf(i));
+                        }
+
+                        for(int i = 1; i <= roundedN1; i++) {
+                            factorialRoundedN1 = factorialRoundedN1.multiply(BigInteger.valueOf(i));
+                        }
+
+                        if(truncatedN1 != roundedN1) {
+                            return (factorialOfADouble + "\nThe factorial of " + n1 + " truncated is \n" + truncatedN1 + "! = " + factorialTruncatedN1 + "\nThe factorial of " + n1 + " rounded is \n" + roundedN1 + "! = " + factorialRoundedN1);
+                        }
+                        else {
+                            return (factorialOfADouble + "\nThe factorial of " + n1 + " truncated/rounded is \n" + truncatedN1 + "! = " + truncatedN1);
+                        }
+                    }
+                }
+                else {
+                    if(n1 == (int) n1) {
+                        for(int i = 1; i <= (int) (n1 * -1); i++) {
+                            factorial = factorial.multiply(BigInteger.valueOf(i));
+                        }
+                        return (undefinedFactorialOfANegative + "\nThe factorial of " + n1 + " positive is \n" + (n1 * -1) + "! = " + factorial);
+                    }
+
+                    int positiveTruncatedN1 = (int) (n1 * -1);
+                    int positiveRoundedN1 = (int) ((n1 * -1) + .5);
+
+                    BigInteger factorialPositiveTruncatedN1 = BigInteger.ONE;
+                    BigInteger factorialPositiveRoundedN1 = BigInteger.ONE;
+
+                    for(int i = 1; i <= positiveTruncatedN1; i++) {
+                        factorialPositiveTruncatedN1 = factorialPositiveTruncatedN1.multiply(BigInteger.valueOf(i));
+                    }
+
+                    for(int i = 1; i <= positiveRoundedN1; i++) {
+                        factorialPositiveRoundedN1 = factorialPositiveRoundedN1.multiply(BigInteger.valueOf(i));
+                    }
+
+                    if(positiveTruncatedN1 != positiveRoundedN1) {
+                        return (factorialOfADouble + "\n" + undefinedFactorialOfANegative + "\nThe factorial of " + n1 + " positive and truncated is \n" + positiveTruncatedN1 + "! = " + factorialPositiveTruncatedN1 + "\nThe factorial of " + n1 + " positive and rounded is \n" + positiveRoundedN1 + "! = " + factorialPositiveRoundedN1);
+                    }
+                    else {
+                        return (factorialOfADouble + "\n" + undefinedFactorialOfANegative + "\nThe factorial of " + n1 + " positive and truncated/rounded is \n" + positiveTruncatedN1 + "! = " + factorialPositiveTruncatedN1);
+                    }
+                }
+            case "^" : return (n1 + "^" + n2 + " = " + Math.pow(n1, n2));
+            case "rt" : return (n1 + "^(1.0/" + n2 + ") = " + Math.pow(n1, (1 / n2)));
+            case "sin" : return ("sin(" + n1 + ") = " + Math.sin(n1));
+            case "asin" : return ("asin(" + n1 + ") = " + Math.asin(n1));
+            case "cos" : return ("cos(" + n1 + ") = " + Math.cos(n1));
+            case "acos" : return ("acos(" + n1 + ") = " + Math.acos(n1));
+            case "tan" : return ("tan(" + n1 + ") = " + Math.tan(n1));
+            case "atan" : return ("atan(" + n1 + ") = " + Math.atan(n1));
+        }
+        return ("" + unknownFunction);
+    }
+}
