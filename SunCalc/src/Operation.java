@@ -96,6 +96,7 @@ public class Operation {
                 }
             case "^" : return (n1 + "^" + n2 + " = " + Math.pow(n1, n2));
             case "rt" : return (n1 + "^(1.0/" + n2 + ") = " + Math.pow(n1, (1 / n2)));
+            case "pi" : return (n1 + "pi = " + (n1 * Math.PI));
             case "sin" : return ("sin(" + n1 + ") = " + Math.sin(n1));
             case "asin" : return ("asin(" + n1 + ") = " + Math.asin(n1));
             case "sinh" : return ("sinh(" + n1 + ") = " + Math.sinh(n1));
