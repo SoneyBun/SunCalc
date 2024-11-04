@@ -1,3 +1,4 @@
+import java.lang.Math;
 @SuppressWarnings({"FieldCanBeLocal", "unused"})
 
 public class Storing {
@@ -39,13 +40,23 @@ public class Storing {
     }
 
     public double getNum1() {
-        n1 = Double.parseDouble(storeTerm.substring(0, storeTerm.indexOf(' ')));
+        if(storeTerm.substring(0, storeTerm.indexOf(' ')).equalsIgnoreCase("pi")) {
+            n1 = Math.PI;
+        }
+        else {
+            n1 = Double.parseDouble(storeTerm.substring(0, storeTerm.indexOf(' ')));
+        }
         return n1;
     }
 
     public double getNum2() {
         if(nSpace == 2) {
-            n2 = Double.parseDouble(newStoreTerm.substring(0, newStoreTerm.indexOf(' ')));
+            if(newStoreTerm.substring(0, newStoreTerm.indexOf(' ')).equalsIgnoreCase("pi")) {
+                n2 = Math.PI;
+            }
+            else {
+                n2 = Double.parseDouble(newStoreTerm.substring(0, newStoreTerm.indexOf(' ')));
+            }
             return n2;
         }
         return 0;
