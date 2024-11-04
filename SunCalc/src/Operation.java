@@ -106,6 +106,7 @@ public class Operation {
             case "tan" : return ("tan(" + n1 + ") = " + Math.tan(n1));
             case "atan" : return ("atan(" + n1 + ") = " + Math.atan(n1));
             case "tanh" : return ("tanh(" + n1 + ") = " + Math.tanh(n1));
+            case "ln" : return ("ln(" + n1 + ") = " + Math.log(n1));
         }
         return ("" + unknownFunction);
     }
