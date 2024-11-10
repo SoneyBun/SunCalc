@@ -44,7 +44,7 @@ public class Storing {
             n1 = Math.PI;
         }
         else if(storeTerm.substring(0, storeTerm.indexOf(' ')).equalsIgnoreCase("e")) {
-            n1 = Math.exp(1);
+            n1 = Math.E;
         }
         else {
             n1 = Double.parseDouble(storeTerm.substring(0, storeTerm.indexOf(' ')));
@@ -58,7 +58,7 @@ public class Storing {
                 n2 = Math.PI;
             }
             else if(newStoreTerm.substring(0, newStoreTerm.indexOf(' ')).equalsIgnoreCase("e")) {
-                n2 = Math.exp(1);
+                n2 = Math.E;
             }
             else {
                 n2 = Double.parseDouble(newStoreTerm.substring(0, newStoreTerm.indexOf(' ')));
