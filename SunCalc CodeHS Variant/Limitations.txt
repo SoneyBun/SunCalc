@@ -1,0 +1,13 @@
+import java.awt.Desktop;
+import java.util.Scanner;
+
+Alternative: 
+Remove feature
+
+---------------------
+
+case "=", "==" : return("" + (n1 == n2));
+
+Alternative:
+case "=" : return("" + (n1 == n2));
+case "==" : return("" + (n1 == n2));
