@@ -30,10 +30,19 @@ public class Operation {
                     return (n1 + " / " + n2 + " = " + (n1 / n2));
                 }
                 return ("" + undefinedDivideByZero);
+            case ">" : return ("" + (n1 > n2));
+            case ">=" : return ("" + (n1 >= n2));
+            case "<" : return ("" + (n1 < n2));
+            case "<=" : return ("" + (n1 <= n2));
+            case "=", "==" : return("" + (n1 == n2));
+            case "max" : return ("" + Math.max(n1, n2));
+            case "min" : return ("" + Math.min(n1, n2));
             case "%" : return (n1 + " % " + n2 + " = " + (n1 % n2));
             case "||" : return ("|" + n1 + "| = " + Math.abs(n1));
             case "!" :
                 BigInteger factorial = BigInteger.ONE;
+                BigInteger factorialTruncatedN1 = BigInteger.ONE;
+                BigInteger factorialRoundedN1 = BigInteger.ONE;
 
                 if(n1 >= 0) {
                     if(n1 == (int) n1) {
@@ -45,9 +54,6 @@ public class Operation {
                     else {
                         int truncatedN1 = (int) (n1);
                         int roundedN1 = (int) (n1 + .5);
-
-                        BigInteger factorialTruncatedN1 = BigInteger.ONE;
-                        BigInteger factorialRoundedN1 = BigInteger.ONE;
 
                         for(int i = 1; i <= truncatedN1; i++) {
                             factorialTruncatedN1 = factorialTruncatedN1.multiply(BigInteger.valueOf(i));
@@ -97,6 +103,7 @@ public class Operation {
             case "^" : return (n1 + "^" + n2 + " = " + Math.pow(n1, n2));
             case "rt" : return (n1 + "^(1.0/" + n2 + ") = " + Math.pow(n1, (1 / n2)));
             case "pi" : return (n1 + "pi = " + (n1 * Math.PI));
+            case "e" : return (n1 + "e = " + (n1 * Math.E));
             case "sin" : return ("sin(" + n1 + ") = " + Math.sin(n1));
             case "asin" : return ("asin(" + n1 + ") = " + Math.asin(n1));
             case "sinh" : return ("sinh(" + n1 + ") = " + Math.sinh(n1));
@@ -107,6 +114,7 @@ public class Operation {
             case "atan" : return ("atan(" + n1 + ") = " + Math.atan(n1));
             case "tanh" : return ("tanh(" + n1 + ") = " + Math.tanh(n1));
             case "ln" : return ("ln(" + n1 + ") = " + Math.log(n1));
+            case "log10" : return("log10(" + n1 + ") = " + Math.log10(n1));
         }
         return ("" + unknownFunction);
     }
