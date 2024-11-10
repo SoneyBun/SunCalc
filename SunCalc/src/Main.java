@@ -6,17 +6,19 @@ public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("SunCalc\n\nEnter your terms in the format\nN1 N2 F\nOr\nN1 F\nFor a list of functions, view the following list");
+        System.out.println("SunCalc\n\nSunCalc is a calculator for math, not to get information about sun and moon times.\nEnter your terms in the format\nN1 N2 F\nOr\nN1 F\nFor a list of functions, view the following list");
         try {
 
-            if (Desktop.isDesktopSupported()) {
+            if(Desktop.isDesktopSupported()) {
                 Desktop desktop = Desktop.getDesktop();
                 URI uri = new URI("https://bit.ly/SunCalcFunctions");
                 desktop.browse(uri);
-            } else {
+            }
+            else {
                 System.out.println("Desktop is not supported on this system.");
             }
-        } catch (Exception e) {
+        }
+        catch(Exception e) {
             e.printStackTrace();
         }
         String terms = scan.nextLine();
