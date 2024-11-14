@@ -30,12 +30,18 @@ public class Operation {
                     return (n1 + " / " + n2 + " = " + (n1 / n2));
                 }
                 return ("" + undefinedDivideByZero);
+            case "//" :
+                if(n2 != 0) {
+                    return (n1 + " // " + n2 + " = " + ((int) (n1 / n2)));
+                }
+                return ("" + undefinedDivideByZero);
             case ">" : return ("" + (n1 > n2));
             case ">=" : return ("" + (n1 >= n2));
             case "<" : return ("" + (n1 < n2));
             case "<=" : return ("" + (n1 <= n2));
-            case "=" : return("" + (n1 == n2));
-            case "==" : return("" + (n1 == n2));
+            case "=" : return ("" + (n1 == n2));
+            case "==" : return ("" + (n1 == n2));
+            case "!=" : return ("" + (n1 != n2));
             case "max" : return ("" + Math.max(n1, n2));
             case "min" : return ("" + Math.min(n1, n2));
             case "%" : return (n1 + " % " + n2 + " = " + (n1 % n2));
