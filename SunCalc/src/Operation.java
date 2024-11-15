@@ -22,7 +22,11 @@ public class Operation {
 
     public String toString() {
         switch (fn.toLowerCase()) {
-            case "+" : return (n1 + " + " + n2 + " = " + (n1 + n2));
+            case "+" :
+                if((n1 == 9 && n2 == 10) || (n1 == 10 && n2 == 9)) {
+                    return(n1 + " + " + n2 + " = " + (n1 + n2) + "\n\n\n\n\n9 + 10 = 21");
+                }
+                return (n1 + " + " + n2 + " = " + (n1 + n2));
             case "-" : return (n1 + " - " + n2 + " = " + (n1 - n2));
             case "*" : return (n1 + " * " + n2 + " = " + (n1 * n2));
             case "/" :
