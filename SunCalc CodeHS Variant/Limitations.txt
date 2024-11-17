@@ -1,13 +1,11 @@
 import java.awt.Desktop;
-import java.util.Scanner;
 
 Alternative: 
 Remove feature
 
 ---------------------
 
-case "=", "==" : return("" + (n1 == n2));
+case "x1", "x2" : return("" + (n1 == n2));;
 
 Alternative:
-case "=" : return("" + (n1 == n2));
-case "==" : return("" + (n1 == n2));
+turn each into it's own case. For factorial, the case has been deleted and only uses !
