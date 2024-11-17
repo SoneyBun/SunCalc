@@ -46,6 +46,9 @@ public class Storing {
         else if(storeTerm.substring(0, storeTerm.indexOf(' ')).equalsIgnoreCase("e")) {
             n1 = Math.E;
         }
+        else if(storeTerm.substring(0, storeTerm.indexOf(' ')).equalsIgnoreCase("phi")) {
+            n1 = ((1 + Math.sqrt(5)) / 2);
+        }
         else {
             n1 = Double.parseDouble(storeTerm.substring(0, storeTerm.indexOf(' ')));
         }
@@ -59,6 +62,9 @@ public class Storing {
             }
             else if(newStoreTerm.substring(0, newStoreTerm.indexOf(' ')).equalsIgnoreCase("e")) {
                 n2 = Math.E;
+            }
+            else if(newStoreTerm.substring(0, newStoreTerm.indexOf(' ')).equalsIgnoreCase("phi")) {
+                n2 = ((1 + Math.sqrt(5)) / 2);
             }
             else {
                 n2 = Double.parseDouble(newStoreTerm.substring(0, newStoreTerm.indexOf(' ')));
