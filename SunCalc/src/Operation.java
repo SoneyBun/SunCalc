@@ -109,7 +109,7 @@ public class Operation {
                         return (factorialOfADouble + "\n" + undefinedFactorialOfANegative + "\nThe factorial of " + n1 + " positive and truncated/rounded is \n" + positiveTruncatedN1 + "! = " + factorialPositiveTruncatedN1);
                     }
                 }
-            case "^", "exp" : return (n1 + "^" + n2 + " = " + Math.pow(n1, n2));
+            case "^", "exponent", "power", "exp", "pow" : return (n1 + "^" + n2 + " = " + Math.pow(n1, n2));
             case "rt", "root" : return (n1 + "^(1.0/" + n2 + ") = " + Math.pow(n1, (1 / n2)));
             case "pi" : return (n1 + "pi = " + (n1 * Math.PI));
             case "e" : return (n1 + "e = " + (n1 * Math.E));
