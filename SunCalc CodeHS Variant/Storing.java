@@ -50,7 +50,11 @@ public class Storing {
             n1 = ((1 + Math.sqrt(5)) / 2);
         }
         else {
-            n1 = Double.parseDouble(storeTerm.substring(0, storeTerm.indexOf(' ')));
+            try {
+                n1 = Double.parseDouble(storeTerm.substring(0, storeTerm.indexOf(' ')));
+            } catch (NumberFormatException e) {
+                return 0;
+            }
         }
         return n1;
     }
@@ -67,7 +71,12 @@ public class Storing {
                 n2 = ((1 + Math.sqrt(5)) / 2);
             }
             else {
-                n2 = Double.parseDouble(newStoreTerm.substring(0, newStoreTerm.indexOf(' ')));
+                try {
+                    n2 = Double.parseDouble(newStoreTerm.substring(0, newStoreTerm.indexOf(' ')));
+                } catch (NumberFormatException e) {
+                    return 0;
+                }
+
             }
             return n2;
         }
