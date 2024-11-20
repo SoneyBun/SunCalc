@@ -6,6 +6,6 @@ public class Report {
     }
 
     public String toString() {
-        return (reason + "\nJoin the Discord server to report mistakes: https://bit.ly/SunCalcServer");
+        return (reason + "\nJoin the Discord server to report mistakes: https://bit.ly/SunCode");
     }
 }
