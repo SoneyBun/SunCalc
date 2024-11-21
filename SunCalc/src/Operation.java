@@ -1,10 +1,11 @@
 import java.lang.Math;
 import java.math.BigInteger;
-@SuppressWarnings("SpellCheckingInspection")
+@SuppressWarnings({"FieldCanBeLocal", "unused", "SpellCheckingInspection"})
 
 public class Operation {
     private final double n1, n2;
     private final String fn;
+    private double answer;
 
     public Operation(double n1, double n2, String fn) {
         this.n1 = n1;
@@ -23,19 +24,31 @@ public class Operation {
 
     public String toString() {
         switch (fn.toLowerCase()) {
-            case "+", "add", "plus" : return (n1 + " + " + n2 + " = " + (n1 + n2));
-            case "++", "increment" : return (n1 + "++ = " + (n1 + 1));
-            case "-", "subtract", "minus" : return (n1 + " - " + n2 + " = " + (n1 - n2));
-            case "--", "decrement" : return (n1 + "-- = " + (n1 - 1));
-            case "*", "multiply", "times" : return (n1 + " * " + n2 + " = " + (n1 * n2));
-            case "/", "divide" :
+            case "+", "add", "plus" :
+                answer = (n1 + n2);
+                return (n1 + " + " + n2 + " = " + answer);
+            case "++", "increment" :
+                answer = (n1 + 1);
+                return (n1 + "++ = " + answer);
+            case "-", "subtract", "minus" :
+                answer = (n1 - n2);
+                return (n1 + " - " + n2 + " = " + answer);
+            case "--", "decrement" :
+                answer = (n1 - 1);
+                return (n1 + "-- = " + answer);
+            case "*", "multiply", "times", "mult" :
+                answer = (n1 * n2);
+                return (n1 + " * " + n2 + " = " + answer);
+            case "/", "divide", "div" :
+                answer = (n1 / n2);
                 if(n2 != 0) {
-                    return (n1 + " / " + n2 + " = " + (n1 / n2));
+                    return (n1 + " / " + n2 + " = " + answer);
                 }
                 return ("" + undefinedDivideByZero);
             case "//" :
+                answer = (int) (n1 / n2);
                 if(n2 != 0) {
-                    return (n1 + " // " + n2 + " = " + ((int) (n1 / n2)));
+                    return (n1 + " // " + n2 + " = " + answer);
                 }
                 return ("" + undefinedDivideByZero);
             case ">" : return ("" + (n1 > n2));
@@ -44,10 +57,18 @@ public class Operation {
             case "<=" : return ("" + (n1 <= n2));
             case "=", "==" : return ("" + (n1 == n2));
             case "!=" : return ("" + (n1 != n2));
-            case "max", "maximum" : return ("" + Math.max(n1, n2));
-            case "min", "minimum" : return ("" + Math.min(n1, n2));
-            case "%", "modulus", "mod" : return (n1 + " % " + n2 + " = " + (n1 % n2));
-            case "||" : return ("|" + n1 + "| = " + Math.abs(n1));
+            case "max", "maximum" :
+                answer = Math.max(n1, n2);
+                return ("" + answer);
+            case "min", "minimum" :
+                answer = Math.min(n1, n2);
+                return ("" + answer);
+            case "%", "modulus", "mod" :
+                answer = (n1 % n2);
+                return (n1 + " % " + n2 + " = " + answer);
+            case "||" :
+                answer = Math.abs(n1);
+                return ("|" + n1 + "| = " + answer);
             case "!", "factorial" :
                 BigInteger factorial = BigInteger.ONE;
                 BigInteger factorialTruncatedN1 = BigInteger.ONE;
@@ -109,24 +130,62 @@ public class Operation {
                         return (factorialOfADouble + "\n" + undefinedFactorialOfANegative + "\nThe factorial of " + n1 + " positive and truncated/rounded is \n" + positiveTruncatedN1 + "! = " + factorialPositiveTruncatedN1);
                     }
                 }
-            case "^", "exponent", "power", "exp", "pow" : return (n1 + "^" + n2 + " = " + Math.pow(n1, n2));
-            case "rt", "root" : return (n1 + "^(1.0/" + n2 + ") = " + Math.pow(n1, (1 / n2)));
-            case "pi" : return (n1 + "pi = " + (n1 * Math.PI));
-            case "e" : return (n1 + "e = " + (n1 * Math.E));
-            case "phi" : return (n1 + "phi = " + (n1 * ((1 + Math.sqrt(5)) / 2)));
-            case "rnd", "round" : return (n1 + " rounded is " + Math.round(n1));
-            case "sin", "sine" : return ("sin(" + n1 + ") = " + Math.sin(n1));
-            case "asin", "arcsine", "arcsin" : return ("asin(" + n1 + ") = " + Math.asin(n1));
-            case "sinh" : return ("sinh(" + n1 + ") = " + Math.sinh(n1));
-            case "cos", "cosine" : return ("cos(" + n1 + ") = " + Math.cos(n1));
-            case "acos", "arccosine", "arccos" : return ("acos(" + n1 + ") = " + Math.acos(n1));
-            case "cosh" : return ("cosh(" + n1 + ") = " + Math.cosh(n1));
-            case "tan", "tangent" : return ("tan(" + n1 + ") = " + Math.tan(n1));
-            case "atan", "arctangent", "arctan" : return ("atan(" + n1 + ") = " + Math.atan(n1));
-            case "tanh" : return ("tanh(" + n1 + ") = " + Math.tanh(n1));
-            case "ln" : return ("ln(" + n1 + ") = " + Math.log(n1));
-            case "log10" : return ("log10(" + n1 + ") = " + Math.log10(n1));
+            case "^", "exponent", "power", "exp", "pow" :
+                answer = Math.pow(n1, n2);
+                return (n1 + "^" + n2 + " = " + answer);
+            case "rt", "root" :
+                answer = Math.pow(n1, (1 / n2));
+                return (n1 + "^(1.0/" + n2 + ") = " + answer);
+            case "pi" :
+                answer = (n1 * Math.PI);
+                return (n1 + "pi = " + answer);
+            case "e" :
+                answer = (n1 * Math.E);
+                return (n1 + "e = " + answer);
+            case "phi" :
+                answer = (n1 * ((1 + Math.sqrt(5)) / 2));
+                return (n1 + "phi = " + answer);
+            case "rnd", "round" :
+                answer = Math.round(n1);
+                return (n1 + " rounded is " + answer);
+            case "sin", "sine" :
+                answer = Math.sin(n1);
+                return ("sin(" + n1 + ") = " + answer);
+            case "asin", "arcsine", "arcsin" :
+                answer = Math.asin(n1);
+                return ("asin(" + n1 + ") = " + answer);
+            case "sinh" :
+                answer = Math.sinh(n1);
+                return ("sinh(" + n1 + ") = " + answer);
+            case "cos", "cosine" :
+                answer = Math.cos(n1);
+                return ("cos(" + n1 + ") = " + answer);
+            case "acos", "arccosine", "arccos" :
+                answer = Math.acos(n1);
+                return ("acos(" + n1 + ") = " + answer);
+            case "cosh" :
+                answer = Math.cosh(n1);
+                return ("cosh(" + n1 + ") = " + answer);
+            case "tan", "tangent" :
+                answer = Math.tan(n1);
+                return ("tan(" + n1 + ") = " + answer);
+            case "atan", "arctangent", "arctan" :
+                answer = Math.atan(n1);
+                return ("atan(" + n1 + ") = " + answer);
+            case "tanh" :
+                answer = Math.tanh(n1);
+                return ("tanh(" + n1 + ") = " + answer);
+            case "ln" :
+                answer = Math.log(n1);
+                return ("ln(" + n1 + ") = " + answer);
+            case "log10" :
+                answer = Math.log10(n1);
+                return ("log10(" + n1 + ") = " + answer);
         }
         return ("" + unknownFunction);
+    }
+
+    public double getAnswer() {
+        return answer;
     }
 }
