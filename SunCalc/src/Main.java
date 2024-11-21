@@ -7,7 +7,7 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         String terms = "";
         Storing store;
-        Operation answer;
+        Operation answer = new Operation(0, 0, "+");
 
         try {
             if(Desktop.isDesktopSupported()) {
@@ -28,12 +28,13 @@ public class Main {
         while(!(terms.equalsIgnoreCase("esc"))) {
             terms = scan.nextLine();
 
-            if(terms.equalsIgnoreCase("esc")) {
+            if(terms.equalsIgnoreCase("esc") || terms.equalsIgnoreCase("escape")) {
                 System.out.println("Thank you for using SunCalc");
                 System.exit(0);
             }
 
-            store = new Storing((terms));
+            store = new Storing(terms, answer.getAnswer());
+
             answer = new Operation(store.getNum1(), store.getNum2(), store.getFunction());
 
             System.out.println(answer);
