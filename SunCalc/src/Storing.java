@@ -3,6 +3,7 @@ import java.lang.Math;
 
 public class Storing {
     private final String storeTerm;
+    private final double answer;
 
     private double n1, n2;
     private String fn = "";
@@ -12,8 +13,9 @@ public class Storing {
 
     private final String newStoreTerm;
 
-    public Storing(String storeTerm) {
+    public Storing(String storeTerm, double answer) {
         this.storeTerm = storeTerm;
+        this.answer = answer;
         this.newStoreTerm = storeTerm.substring(storeTerm.indexOf(' ') + 1);
 
         for(int i = 0; i < storeTerm.length() - 1; i++) {
@@ -49,6 +51,9 @@ public class Storing {
         else if(storeTerm.substring(0, storeTerm.indexOf(' ')).equalsIgnoreCase("phi")) {
             n1 = ((1 + Math.sqrt(5)) / 2);
         }
+        else if(storeTerm.substring(0, storeTerm.indexOf(' ')).equalsIgnoreCase("ans")) {
+            n1 = answer;
+        }
         else {
             try {
                 n1 = Double.parseDouble(storeTerm.substring(0, storeTerm.indexOf(' ')));
@@ -57,6 +62,10 @@ public class Storing {
             }
         }
         return n1;
+    }
+
+    public void setNum1(double newN1) {
+        this.n1 = newN1;
     }
 
     public double getNum2() {
@@ -70,6 +79,9 @@ public class Storing {
             else if(newStoreTerm.substring(0, newStoreTerm.indexOf(' ')).equalsIgnoreCase("phi")) {
                 n2 = ((1 + Math.sqrt(5)) / 2);
             }
+            else if(newStoreTerm.substring(0, newStoreTerm.indexOf(' ')).equalsIgnoreCase("ans")) {
+                n2 = answer;
+            }
             else {
                 try {
                     n2 = Double.parseDouble(newStoreTerm.substring(0, newStoreTerm.indexOf(' ')));
@@ -81,6 +93,10 @@ public class Storing {
             return n2;
         }
         return 0;
+    }
+
+    public void setNum2(double newN2) {
+        this.n2 = newN2;
     }
 
     public String getFunction() {
