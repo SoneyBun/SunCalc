@@ -1,11 +1,11 @@
 import java.lang.Math;
 import java.math.BigInteger;
-@SuppressWarnings({"FieldCanBeLocal", "unused", "SpellCheckingInspection"})
+@SuppressWarnings("all")
 
 public class Operation {
     private final double n1, n2;
     private final String fn;
-    private double answer;
+    private double answer = 0, answer2 = 0;
 
     public Operation(double n1, double n2, String fn) {
         this.n1 = n1;
@@ -79,7 +79,8 @@ public class Operation {
                         for(int i = 1; i <= (int) n1; i++) {
                             factorial = factorial.multiply(BigInteger.valueOf(i));
                         }
-                        return (n1 + "! = " + factorial);
+                        answer = factorial.doubleValue();
+                        return (n1 + "! = " + answer);
                     }
                     else {
                         int truncatedN1 = (int) (n1);
@@ -94,10 +95,13 @@ public class Operation {
                         }
 
                         if(truncatedN1 != roundedN1) {
-                            return (factorialOfADouble + "\nThe factorial of " + n1 + " truncated is \n" + truncatedN1 + "! = " + factorialTruncatedN1 + "\nThe factorial of " + n1 + " rounded is \n" + roundedN1 + "! = " + factorialRoundedN1);
+                            answer = factorialTruncatedN1.doubleValue();
+                            answer2 = factorialRoundedN1.doubleValue();
+                            return (factorialOfADouble + "\nThe factorial of " + n1 + " truncated is \n" + truncatedN1 + "! = " + answer + "\nThe factorial of " + n1 + " rounded is \n" + roundedN1 + "! = " + answer2);
                         }
                         else {
-                            return (factorialOfADouble + "\nThe factorial of " + n1 + " truncated/rounded is \n" + truncatedN1 + "! = " + factorialTruncatedN1);
+                            answer = factorialTruncatedN1.doubleValue();
+                            return (factorialOfADouble + "\nThe factorial of " + n1 + " truncated/rounded is \n" + truncatedN1 + "! = " + answer);
                         }
                     }
                 }
@@ -124,10 +128,13 @@ public class Operation {
                     }
 
                     if(positiveTruncatedN1 != positiveRoundedN1) {
-                        return (factorialOfADouble + "\n" + undefinedFactorialOfANegative + "\nThe factorial of " + n1 + " positive and truncated is \n" + positiveTruncatedN1 + "! = " + factorialPositiveTruncatedN1 + "\nThe factorial of " + n1 + " positive and rounded is \n" + positiveRoundedN1 + "! = " + factorialPositiveRoundedN1);
+                        answer = factorialPositiveTruncatedN1.doubleValue();
+                        answer2 = factorialPositiveRoundedN1.doubleValue();
+                        return (factorialOfADouble + "\n" + undefinedFactorialOfANegative + "\nThe factorial of " + n1 + " positive and truncated is \n" + positiveTruncatedN1 + "! = " + answer + "\nThe factorial of " + n1 + " positive and rounded is \n" + positiveRoundedN1 + "! = " + answer2);
                     }
                     else {
-                        return (factorialOfADouble + "\n" + undefinedFactorialOfANegative + "\nThe factorial of " + n1 + " positive and truncated/rounded is \n" + positiveTruncatedN1 + "! = " + factorialPositiveTruncatedN1);
+                        answer = factorialPositiveTruncatedN1.doubleValue();
+                        return (factorialOfADouble + "\n" + undefinedFactorialOfANegative + "\nThe factorial of " + n1 + " positive and truncated/rounded is \n" + positiveTruncatedN1 + "! = " + answer);
                     }
                 }
             case "^", "exponent", "power", "exp", "pow" :
@@ -187,5 +194,9 @@ public class Operation {
 
     public double getAnswer() {
         return answer;
+    }
+
+    public double getAnswer2() {
+        return answer2;
     }
 }
