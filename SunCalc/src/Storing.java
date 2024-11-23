@@ -1,9 +1,9 @@
 import java.lang.Math;
-@SuppressWarnings({"FieldCanBeLocal", "unused"})
+@SuppressWarnings("all")
 
 public class Storing {
     private final String storeTerm;
-    private final double answer;
+    private final double answer, answer2;
 
     private double n1, n2;
     private String fn = "";
@@ -13,9 +13,10 @@ public class Storing {
 
     private final String newStoreTerm;
 
-    public Storing(String storeTerm, double answer) {
+    public Storing(String storeTerm, double answer, double answer2) {
         this.storeTerm = storeTerm;
         this.answer = answer;
+        this.answer2 = answer2;
         this.newStoreTerm = storeTerm.substring(storeTerm.indexOf(' ') + 1);
 
         for(int i = 0; i < storeTerm.length() - 1; i++) {
@@ -54,6 +55,9 @@ public class Storing {
         else if(storeTerm.substring(0, storeTerm.indexOf(' ')).equalsIgnoreCase("ans")) {
             n1 = answer;
         }
+        else if(storeTerm.substring(0, storeTerm.indexOf(' ')).equalsIgnoreCase("ans2")) {
+            n1 = answer2;
+        }
         else {
             try {
                 n1 = Double.parseDouble(storeTerm.substring(0, storeTerm.indexOf(' ')));
@@ -81,6 +85,9 @@ public class Storing {
             }
             else if(newStoreTerm.substring(0, newStoreTerm.indexOf(' ')).equalsIgnoreCase("ans")) {
                 n2 = answer;
+            }
+            else if(newStoreTerm.substring(0, newStoreTerm.indexOf(' ')).equalsIgnoreCase("ans2")) {
+                n2 = answer2;
             }
             else {
                 try {
