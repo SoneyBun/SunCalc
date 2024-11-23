@@ -1,6 +1,7 @@
 import java.awt.Desktop;
 import java.net.URI;
 import java.util.Scanner;
+@SuppressWarnings("all")
 
 public class Main {
     public static void main(String[] args) {
@@ -23,7 +24,7 @@ public class Main {
             e.printStackTrace();
         }
 
-        System.out.println("SunCalc\n\nSunCalc is a calculator for math, not to get information about sun and moon times.\nEnter your terms in the format\nN1 N2 F\nOr\nN1 F\nFor a list of functions, view the following list: https://bit.ly/SunCalcFunctions\nType esc to quit");
+        System.out.println("SunCalc\n\nSunCalc is a calculator for math, not to get information about sun and moon times.\nEnter your terms in the format\nN1 N2 F\nOr\nN1 F\nFor a list of functions, view the following list: https://bit.ly/SunCalcFunctions\nType esc to quit\n");
 
         while(!(terms.equalsIgnoreCase("esc"))) {
             terms = scan.nextLine();
@@ -33,7 +34,7 @@ public class Main {
                 System.exit(0);
             }
 
-            store = new Storing(terms, answer.getAnswer());
+            store = new Storing(terms, answer.getAnswer(), answer.getAnswer2());
 
             answer = new Operation(store.getNum1(), store.getNum2(), store.getFunction());
 
