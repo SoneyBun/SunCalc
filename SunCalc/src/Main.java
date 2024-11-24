@@ -24,7 +24,7 @@ public class Main {
             e.printStackTrace();
         }
 
-        System.out.println("SunCalc\n\nSunCalc is a calculator for math, not to get information about sun and moon times.\nEnter your terms in the format\nN1 N2 F\nOr\nN1 F\nFor a list of functions, view the following list: https://bit.ly/SunCalcFunctions\nType esc to quit\n");
+        System.out.println("SunCalc\n\nSunCalc is a calculator for math, not to get information about sun and moon times.\nSunCalc uses Reverse Polish Notation\nEnter your terms in the format\nN1 N2 F\nOr\nN1 F\nFor a list of functions, view the following list: https://bit.ly/SunCalcFunctions\nType esc to quit\n");
 
         while(!(terms.equalsIgnoreCase("esc"))) {
             terms = scan.nextLine();
