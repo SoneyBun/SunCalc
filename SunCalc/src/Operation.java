@@ -26,27 +26,34 @@ public class Operation {
         switch (fn.toLowerCase()) {
             case "+", "add", "plus" :
                 answer = (n1 + n2);
+                answer2 = 0;
                 return (n1 + " + " + n2 + " = " + answer);
             case "++", "increment" :
                 answer = (n1 + 1);
+                answer2 = 0;
                 return (n1 + "++ = " + answer);
             case "-", "subtract", "minus" :
                 answer = (n1 - n2);
+                answer2 = 0;
                 return (n1 + " - " + n2 + " = " + answer);
             case "--", "decrement" :
                 answer = (n1 - 1);
+                answer2 = 0;
                 return (n1 + "-- = " + answer);
             case "*", "multiply", "times", "mult" :
                 answer = (n1 * n2);
+                answer2 = 0;
                 return (n1 + " * " + n2 + " = " + answer);
             case "/", "divide", "div" :
                 answer = (n1 / n2);
+                answer2 = 0;
                 if(n2 != 0) {
                     return (n1 + " / " + n2 + " = " + answer);
                 }
                 return ("" + undefinedDivideByZero);
             case "//" :
                 answer = (int) (n1 / n2);
+                answer2 = 0;
                 if(n2 != 0) {
                     return (n1 + " // " + n2 + " = " + answer);
                 }
@@ -59,15 +66,19 @@ public class Operation {
             case "!=" : return ("" + (n1 != n2));
             case "max", "maximum" :
                 answer = Math.max(n1, n2);
+                answer2 = 0;
                 return ("" + answer);
             case "min", "minimum" :
                 answer = Math.min(n1, n2);
+                answer2 = 0;
                 return ("" + answer);
             case "%", "modulus", "mod" :
                 answer = (n1 % n2);
+                answer2 = 0;
                 return (n1 + " % " + n2 + " = " + answer);
             case "||" :
                 answer = Math.abs(n1);
+                answer2 = 0;
                 return ("|" + n1 + "| = " + answer);
             case "!", "factorial" :
                 BigInteger factorial = BigInteger.ONE;
@@ -80,6 +91,7 @@ public class Operation {
                             factorial = factorial.multiply(BigInteger.valueOf(i));
                         }
                         answer = factorial.doubleValue();
+                        answer2 = 0;
                         return (n1 + "! = " + answer);
                     }
                     else {
@@ -101,6 +113,7 @@ public class Operation {
                         }
                         else {
                             answer = factorialTruncatedN1.doubleValue();
+                            answer2 = 0;
                             return (factorialOfADouble + "\nThe factorial of " + n1 + " truncated/rounded is \n" + truncatedN1 + "! = " + answer);
                         }
                     }
@@ -110,7 +123,9 @@ public class Operation {
                         for(int i = 1; i <= (int) (n1 * -1); i++) {
                             factorial = factorial.multiply(BigInteger.valueOf(i));
                         }
-                        return (undefinedFactorialOfANegative + "\nThe factorial of " + n1 + " positive is \n" + (n1 * -1) + "! = " + factorial);
+                        answer = factorial.doubleValue();
+                        answer2 = 0;
+                        return (undefinedFactorialOfANegative + "\nThe factorial of " + n1 + " positive is \n" + (n1 * -1) + "! = " + answer);
                     }
 
                     int positiveTruncatedN1 = (int) (n1 * -1);
@@ -134,59 +149,77 @@ public class Operation {
                     }
                     else {
                         answer = factorialPositiveTruncatedN1.doubleValue();
+                        answer2 = 0;
                         return (factorialOfADouble + "\n" + undefinedFactorialOfANegative + "\nThe factorial of " + n1 + " positive and truncated/rounded is \n" + positiveTruncatedN1 + "! = " + answer);
                     }
                 }
             case "^", "exponent", "power", "exp", "pow" :
                 answer = Math.pow(n1, n2);
+                answer2 = 0;
                 return (n1 + "^" + n2 + " = " + answer);
             case "rt", "root" :
                 answer = Math.pow(n1, (1 / n2));
+                answer2 = 0;
                 return (n1 + "^(1.0/" + n2 + ") = " + answer);
             case "pi" :
                 answer = (n1 * Math.PI);
+                answer2 = 0;
                 return (n1 + "pi = " + answer);
             case "e" :
                 answer = (n1 * Math.E);
+                answer2 = 0;
                 return (n1 + "e = " + answer);
             case "phi" :
                 answer = (n1 * ((1 + Math.sqrt(5)) / 2));
+                answer2 = 0;
                 return (n1 + "phi = " + answer);
             case "rnd", "round" :
                 answer = Math.round(n1);
+                answer2 = 0;
                 return (n1 + " rounded is " + answer);
             case "sin", "sine" :
                 answer = Math.sin(n1);
+                answer2 = 0;
                 return ("sin(" + n1 + ") = " + answer);
             case "asin", "arcsine", "arcsin" :
                 answer = Math.asin(n1);
+                answer2 = 0;
                 return ("asin(" + n1 + ") = " + answer);
             case "sinh" :
                 answer = Math.sinh(n1);
+                answer2 = 0;
                 return ("sinh(" + n1 + ") = " + answer);
             case "cos", "cosine" :
                 answer = Math.cos(n1);
+                answer2 = 0;
                 return ("cos(" + n1 + ") = " + answer);
             case "acos", "arccosine", "arccos" :
                 answer = Math.acos(n1);
+                answer2 = 0;
                 return ("acos(" + n1 + ") = " + answer);
             case "cosh" :
                 answer = Math.cosh(n1);
+                answer2 = 0;
                 return ("cosh(" + n1 + ") = " + answer);
             case "tan", "tangent" :
                 answer = Math.tan(n1);
+                answer2 = 0;
                 return ("tan(" + n1 + ") = " + answer);
             case "atan", "arctangent", "arctan" :
                 answer = Math.atan(n1);
+                answer2 = 0;
                 return ("atan(" + n1 + ") = " + answer);
             case "tanh" :
                 answer = Math.tanh(n1);
+                answer2 = 0;
                 return ("tanh(" + n1 + ") = " + answer);
             case "ln" :
                 answer = Math.log(n1);
+                answer2 = 0;
                 return ("ln(" + n1 + ") = " + answer);
             case "log10" :
                 answer = Math.log10(n1);
+                answer2 = 0;
                 return ("log10(" + n1 + ") = " + answer);
         }
         return ("" + unknownFunction);
