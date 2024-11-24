@@ -19,6 +19,8 @@ You can find out more about Reverse Polish Notation (RPN) [here](https://en.wiki
 
 SunCalc can handle trigonometry and irrational numbers. A list of functions can be found [here](https://bit.ly/SunCalcFunctions).
 
+>The functions found in gray cannot be used in the CodeHS Variant.
+
 ## CodeHS Variant
 
 The [CodeHS variant of SunCalc](https://bit.ly/SunCalcTesting) can handle the same math. However, due to CodeHS limitations, the functions auto open is removed, and many cases for functions had to be removed for memory reasons.
@@ -42,9 +44,9 @@ The GitHub repository for SunCalc can be found [here](https://github.com/SoneyBu
 
 The following irrational numbers can be used in SunCalc. Only the first 15 digits will be shown.
 
-**pi** - 3.14159265358979
-**e** - 2.71828182845904
-**phi** - 1.61803398874989
+* **pi (**π**)** - 3.14159265358979
+* **e** - 2.71828182845904
+* **phi (Φ)** - 1.61803398874989
 
 ## Factorial (!)
 
@@ -67,6 +69,3 @@ I'm Sunny. I've been programming for around 4 years now. I can program in the fo
 Coding is my passion as the thought of building something huge from nothing but an empty file is insane.
 
 I love to play video games. Roblox being one of my favorites. I like to listen to music, maybe we have a similar taste?
-
-**Roblox** - [@pigpen255](https://www.roblox.com/users/180438571/profile)
-**Spotify Playlist** - [Songs i like](https://open.spotify.com/playlist/7cgR9kxiY9GSXGgfTHvthE?si=1a650e589a8a4cf2)
