@@ -51,7 +51,7 @@ public class Operation {
                     return (n1 + " / " + n2 + " = " + answer);
                 }
                 return ("" + undefinedDivideByZero);
-            case "//" :
+            case "//", "floordiv" :
                 answer = (int) (n1 / n2);
                 answer2 = 0;
                 if(n2 != 0) {
