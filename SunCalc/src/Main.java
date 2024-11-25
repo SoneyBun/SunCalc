@@ -35,7 +35,6 @@ public class Main {
             }
 
             store = new Storing(terms, answer.getAnswer(), answer.getAnswer2());
-
             answer = new Operation(store.getNum1(), store.getNum2(), store.getFunction());
 
             System.out.println(answer);
