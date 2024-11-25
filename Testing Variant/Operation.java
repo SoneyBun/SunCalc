@@ -17,6 +17,7 @@ public class Operation {
     private final Report undefinedDivideByZero = assignReport("Undefined - Dividing By Zero");
     private final Report undefinedFactorialOfANegative = assignReport("Undefined - Factorial Of A Negative");
     private final Report factorialOfADouble = assignReport("Error - Factorial Of A Double");
+    private final Report rootOfANegative = assignReport("Error - Root Of A Negative");
 
     public Report assignReport(String reason) {
         return new Report(reason);
@@ -158,9 +159,14 @@ public class Operation {
                 answer2 = 0;
                 return (n1 + "^" + n2 + " = " + answer);
             case "rt" :
-                answer = Math.pow(n1, (1 / n2));
                 answer2 = 0;
-                return (n1 + "^(1.0/" + n2 + ") = " + answer);
+                if(n1 >= 0) {
+                    answer = Math.pow(n1, (1 / n2));
+                    return (n1 + "^(1.0/" + n2 + ") = " + answer);
+                }
+                else {
+                    return (rootOfANegative.toString());
+                }
             case "pi" :
                 answer = (n1 * Math.PI);
                 answer2 = 0;
@@ -222,7 +228,7 @@ public class Operation {
                 answer2 = 0;
                 return ("log10(" + n1 + ") = " + answer);
         }
-        return ("" + unknownFunction);
+        return (unknownFunction.toString());
     }
 
     public double getAnswer() {
