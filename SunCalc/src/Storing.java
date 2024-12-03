@@ -113,6 +113,6 @@ public class Storing {
         else {
             fn = storeTerm.substring(storeTerm.indexOf(' ') + 1);
         }
-        return fn;
+        return fn.toLowerCase();
     }
 }
