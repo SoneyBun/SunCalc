@@ -224,8 +224,7 @@ public class Operation {
                 answer2 = 0;
                 return ("ln(" + n1 + ") = " + answer);
             case "log" :
-                if(n2 == 0) {
-                    n2 = 10;
+                if(n2 == 0 || n2 == 10) {
                     answer = Math.log(n1);
                     answer2 = 0;
                     return ("log(" + n1 + ") = " + answer);
