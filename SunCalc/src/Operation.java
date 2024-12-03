@@ -3,7 +3,7 @@ import java.math.BigInteger;
 @SuppressWarnings("all")
 
 public class Operation {
-    private final double n1, n2;
+    private double n1, n2;
     private final String fn;
     private double answer = 0, answer2 = 0;
 
@@ -223,10 +223,18 @@ public class Operation {
                 answer = Math.log(n1);
                 answer2 = 0;
                 return ("ln(" + n1 + ") = " + answer);
-            case "log10" :
-                answer = Math.log10(n1);
-                answer2 = 0;
-                return ("log10(" + n1 + ") = " + answer);
+            case "log" :
+                if(n2 == 0) {
+                    n2 = 10;
+                    answer = Math.log(n1);
+                    answer2 = 0;
+                    return ("log(" + n1 + ") = " + answer);
+                }
+                else {
+                    answer = Math.log(n1) / Math.log(n2);
+                    answer2 = Math.log(n2) / Math.log(n1);
+                    return ("log" + n2 + "(" + n1 + ") = " + answer + "\nlog" + n1 + "(" + n2 + ") = " + answer2);
+                }
         }
         return (unknownFunction.toString());
     }
