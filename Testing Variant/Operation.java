@@ -18,6 +18,7 @@ public class Operation {
     private final Report undefinedFactorialOfANegative = assignReport("Undefined - Factorial Of A Negative");
     private final Report factorialOfADouble = assignReport("Error - Factorial Of A Double");
     private final Report rootOfANegative = assignReport("Error - Root Of A Negative");
+    private final Report undefinedNegativeBase = assignReport("Undefined - Negative Base");
 
     public Report assignReport(String reason) {
         return new Report(reason);
@@ -223,10 +224,27 @@ public class Operation {
                 answer = Math.log(n1);
                 answer2 = 0;
                 return ("ln(" + n1 + ") = " + answer);
-            case "log10" :
-                answer = Math.log10(n1);
-                answer2 = 0;
-                return ("log10(" + n1 + ") = " + answer);
+            case "log" :
+                if(n2 == 0 || n2 == 10) {
+                    answer = Math.log(n1);
+                    answer2 = 0;
+                    return ("log(" + n1 + ") = " + answer);
+                }
+                else {
+                    if((n2 > 0 && n1 > 0) || (n2 == n1)) {
+                        if(n2 == n1) {
+                            answer = 1;
+                            answer2 = 0;
+                            return ("log_" + n2 + "(" + n1 + ") = " + answer);
+                        }
+                        else {
+                            answer = Math.log(n1) / Math.log(n2);
+                            answer2 = Math.log(n2) / Math.log(n1);
+                            return ("log_" + n2 + "(" + n1 + ") = " + answer + "\nlog_" + n1 + "(" + n2 + ") = " + answer2);
+                        }
+                    }
+                    return (undefinedNegativeBase.toString());
+                }
         }
         return (unknownFunction.toString());
     }
