@@ -11,7 +11,7 @@ What is Reverse Polish Notation? It is when you type the operator after the oper
 
 	2 2 +
 
-Would print out
+SunCalc Would print out
 
 	2.0 + 2.0 = 4.0
 You can find out more about Reverse Polish Notation (RPN) [here](https://en.wikipedia.org/wiki/Reverse_Polish_notation).
