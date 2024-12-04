@@ -3,7 +3,7 @@ import java.math.BigInteger;
 @SuppressWarnings("all")
 
 public class Operation {
-    private double n1, n2;
+    private final double n1, n2;
     private final String fn;
     private double answer = 0, answer2 = 0;
 
@@ -18,6 +18,7 @@ public class Operation {
     private final Report undefinedFactorialOfANegative = assignReport("Undefined - Factorial Of A Negative");
     private final Report factorialOfADouble = assignReport("Error - Factorial Of A Double");
     private final Report rootOfANegative = assignReport("Error - Root Of A Negative");
+    private final Report undefinedNegativeBase = assignReport("Undefined - Negative Base");
 
     public Report assignReport(String reason) {
         return new Report(reason);
@@ -156,7 +157,6 @@ public class Operation {
                 }
             case "^", "exponent", "power", "exp", "pow" :
                 answer = Math.pow(n1, n2);
-                answer2 = 0;
                 return (n1 + "^" + n2 + " = " + answer);
             case "rt", "root" :
                 answer2 = 0;
@@ -219,7 +219,7 @@ public class Operation {
                 answer = Math.tanh(n1);
                 answer2 = 0;
                 return ("tanh(" + n1 + ") = " + answer);
-            case "ln", "loge" :
+            case "ln", "log_e" :
                 answer = Math.log(n1);
                 answer2 = 0;
                 return ("ln(" + n1 + ") = " + answer);
@@ -230,9 +230,19 @@ public class Operation {
                     return ("log(" + n1 + ") = " + answer);
                 }
                 else {
-                    answer = Math.log(n1) / Math.log(n2);
-                    answer2 = Math.log(n2) / Math.log(n1);
-                    return ("log" + n2 + "(" + n1 + ") = " + answer + "\nlog" + n1 + "(" + n2 + ") = " + answer2);
+                    if((n2 > 0 && n1 > 0) || (n2 == n1)) {
+                        if(n2 == n1) {
+                            answer = 1;
+                            answer2 = 0;
+                            return ("log_" + n2 + "(" + n1 + ") = " + answer);
+                        }
+                        else {
+                            answer = Math.log(n1) / Math.log(n2);
+                            answer2 = Math.log(n2) / Math.log(n1);
+                            return ("log_" + n2 + "(" + n1 + ") = " + answer + "\nlog_" + n1 + "(" + n2 + ") = " + answer2);
+                        }
+                    }
+                    return (undefinedNegativeBase.toString());
                 }
         }
         return (unknownFunction.toString());
