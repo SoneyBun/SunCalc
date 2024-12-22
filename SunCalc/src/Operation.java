@@ -220,12 +220,12 @@ public class Operation {
                 answer2 = 0;
                 return ("tanh(" + n1 + ") = " + answer);
             case "ln", "log_e" :
-                answer = Math.log(n1);
+                answer = Math.log(n1) / Math.log(Math.E);
                 answer2 = 0;
                 return ("ln(" + n1 + ") = " + answer);
             case "log" :
-                if(n2 == 0 || n2 == 10) {
-                    answer = Math.log(n1);
+                if(n2 == 10) {
+                    answer = Math.log(n1) / Math.log(n2);
                     answer2 = 0;
                     return ("log(" + n1 + ") = " + answer);
                 }
