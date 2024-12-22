@@ -43,27 +43,19 @@ public class Storing {
     }
 
     public double getNum1() {
-        if(storeTerm.substring(0, storeTerm.indexOf(' ')).equalsIgnoreCase("pi")) {
-            n1 = Math.PI;
-        }
-        else if(storeTerm.substring(0, storeTerm.indexOf(' ')).equalsIgnoreCase("e")) {
-            n1 = Math.E;
-        }
-        else if(storeTerm.substring(0, storeTerm.indexOf(' ')).equalsIgnoreCase("phi")) {
-            n1 = ((1 + Math.sqrt(5)) / 2);
-        }
-        else if(storeTerm.substring(0, storeTerm.indexOf(' ')).equalsIgnoreCase("ans")) {
-            n1 = answer;
-        }
-        else if(storeTerm.substring(0, storeTerm.indexOf(' ')).equalsIgnoreCase("ans2")) {
-            n1 = answer2;
-        }
-        else {
-            try {
-                n1 = Double.parseDouble(storeTerm.substring(0, storeTerm.indexOf(' ')));
-            } catch (NumberFormatException e) {
-                return 0;
-            }
+        switch (storeTerm.substring(0, storeTerm.indexOf(' ')).toLowerCase()) {
+            case "pi" : n1 = Math.PI;
+            case "e" : n1 = Math.E;
+            case "phi" : n1 = ((1 + Math.sqrt(5)) / 2);
+            case "pycon" : n1 = Math.sqrt(2);
+            case "ans" : n1 = answer;
+            case "ans2" : n1 = answer2;
+            default :
+                try {
+                    n1 = Double.parseDouble(storeTerm.substring(0, storeTerm.indexOf(' ')));
+                } catch (NumberFormatException e) {
+                    return 0;
+                }
         }
         return n1;
     }
@@ -74,32 +66,25 @@ public class Storing {
 
     public double getNum2() {
         if(nSpace == 2) {
-            if(newStoreTerm.substring(0, newStoreTerm.indexOf(' ')).equalsIgnoreCase("pi")) {
-                n2 = Math.PI;
+            switch (newStoreTerm.substring(0, newStoreTerm.indexOf(' ')).toLowerCase()) {
+                case "pi" : n2 = Math.PI;
+                case "e" : n2 = Math.E;
+                case "phi" : n2 = ((1 + Math.sqrt(5)) / 2);
+                case "pycon" : n2 = Math.sqrt(2);
+                case "ans" : n2 = answer;
+                case "ans2" : n2 = answer2;
+                default :
+                    try {
+                        n2 = Double.parseDouble(newStoreTerm.substring(0, newStoreTerm.indexOf(' ')));
+                    } catch (NumberFormatException e) {
+                        return 0;
+                    }
             }
-            else if(newStoreTerm.substring(0, newStoreTerm.indexOf(' ')).equalsIgnoreCase("e")) {
-                n2 = Math.E;
-            }
-            else if(newStoreTerm.substring(0, newStoreTerm.indexOf(' ')).equalsIgnoreCase("phi")) {
-                n2 = ((1 + Math.sqrt(5)) / 2);
-            }
-            else if(newStoreTerm.substring(0, newStoreTerm.indexOf(' ')).equalsIgnoreCase("ans")) {
-                n2 = answer;
-            }
-            else if(newStoreTerm.substring(0, newStoreTerm.indexOf(' ')).equalsIgnoreCase("ans2")) {
-                n2 = answer2;
-            }
-            else {
-                try {
-                    n2 = Double.parseDouble(newStoreTerm.substring(0, newStoreTerm.indexOf(' ')));
-                } catch (NumberFormatException e) {
-                    return 0;
-                }
-
-            }
-            return n2;
         }
-        return 0;
+        else {
+            n2 = 0;
+        }
+        return n2;
     }
 
     public void setNum2(double newN2) {
