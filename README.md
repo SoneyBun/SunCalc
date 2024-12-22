@@ -47,12 +47,13 @@ The following irrational numbers can be used in SunCalc. Only the first 15 digit
 * **pi (**π**)** - 3.14159265358979
 * **e** - 2.71828182845904
 * **phi (Φ)** - 1.61803398874989
+* **pycon (√2)** - 1.414213562373095
 
 ## Factorial (!)
 
 As it is impossible to do the factorial of a negative and the factorial of a non-integer, if a negative non-integer was entered along with the factorial operator. It will tell you the mistakes and give you both the positive, the rounded and/or truncated of the factorial.
 
-## ans, ans2
+## ans/answer, ans2/answer2
 
 For when you get two numbers on a factorial, you may use ans and ans2. ans can be used on almost every operator, except those that return booleans.
 
