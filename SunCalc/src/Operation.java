@@ -169,20 +169,64 @@ public class Operation {
                 }
             case "pi" :
                 answer = (n1 * Math.PI);
-                answer2 = 0;
-                return (n1 + "pi = " + answer);
+                if(n2 != 0) {
+                    answer2 = (n2 * Math.PI);
+                    return (n1 + "pi = " + answer + "\n" + n2 + "pi = " + answer2);
+                }
+                else {
+                    answer2 = 0;
+                    return (n1 + "pi = " + answer);
+                }
             case "e" :
                 answer = (n1 * Math.E);
-                answer2 = 0;
-                return (n1 + "e = " + answer);
+                if(n2 != 0) {
+                    answer2 = (n2 * Math.E);
+                    return (n1 + "e = " + answer + "\n" + n2 + "e = " + answer2);
+                }
+                else {
+                    answer2 = 0;
+                    return (n1 + "e = " + answer);
+                }
             case "phi" :
                 answer = (n1 * ((1 + Math.sqrt(5)) / 2));
-                answer2 = 0;
-                return (n1 + "phi = " + answer);
+                if(n2 != 0) {
+                    answer2 = (n2 * ((1 + Math.sqrt(5)) / 2));
+                    return (n1 + "phi = " + answer + "\n" + n2 + "phi = " + answer2);
+                }
+                else {
+                    answer2 = 0;
+                    return (n1 + "phi = " + answer);
+                }
+            case "pycon" :
+                answer = (n1 * (Math.sqrt(2)));
+                if(n2 != 0) {
+                    answer2 = (n2 * (Math.sqrt(2)));
+                    return (n1 + "pycon = " + answer + "\n" + n2 + "pycon = " + answer2);
+                }
+                else {
+                    answer2 = 0;
+                    return (n1 + "pycon = " + answer);
+                }
             case "rnd", "round" :
                 answer = Math.round(n1);
-                answer2 = 0;
-                return (n1 + " rounded is " + answer);
+                if(n2 != 0) {
+                    answer2 = Math.round(n2);
+                    return (n1 + " rounded is " + answer + "\n" + n2 + " rounded is " + answer2);
+                }
+                else {
+                    answer2 = 0;
+                    return (n1 + " rounded is " + answer);
+                }
+            case "truncate" :
+                answer = (int) n1;
+                if(n2 != 0) {
+                    answer2 = (int) n2;
+                    return (n1 + " truncated is " + answer + "\n" + n2 + " truncated is " + answer2);
+                }
+                else {
+                    answer2 = 0;
+                    return (n1 + " truncated is " + answer);
+                }
             case "sin", "sine" :
                 answer = Math.sin(n1);
                 answer2 = 0;
