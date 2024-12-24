@@ -29,6 +29,15 @@ The [CodeHS variant of SunCalc](https://bit.ly/SunCalcTesting) can handle the sa
 
 SunCalc was made thanks to [SoneyBun](https://github.com/SoneyBun) and [Skeledan](https://github.com/TheRealSkeledan). It is actively getting updated. Find more or even talk to us in the Discord server.
 
+SoneyBun
+* Main.java
+* Operation.java
+* Report.java
+* Storing.java
+
+Skeledan
+* Main.java Open-documentation feature
+
 ## Discord Server
 
 The [SunCode Discord server](https://bit.ly/SunCode) is a little fun laid back community hangout that also has a passion for all things computer science and cybersecurity.
