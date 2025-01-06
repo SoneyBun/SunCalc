@@ -16,7 +16,7 @@ You can find out more about Reverse Polish Notation (RPN) [here](https://en.wiki
 
 SunCalc can handle trigonometry and irrational numbers. A list of functions can be found [here](https://bit.ly/SunCalcFunctions).
 
->The functions found in gray cannot be used in the CodeHS Variant.
+>The functions found in gray cannot be used in CodeHS
 
 ## Developers
 
