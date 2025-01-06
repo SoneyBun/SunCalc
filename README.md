@@ -2,9 +2,6 @@
 
 Welcome to **SunCalc**. This calculator uses Reverse Polish Notation. This is **not** a calculator used to find sun and moon information. It is called SunCalc because it is a calculator followed before my name, Sunny.
 
-
-
-
 ## Reverse Polish Notation
 
 What is Reverse Polish Notation? It is when you type the operator after the operands. For example
@@ -42,7 +39,7 @@ The [SunCode Discord server](https://bit.ly/SunCode) is a little fun laid back c
 
 ## GitHub Repository
 
-The GitHub repository for SunCalc can be found [here](https://github.com/SoneyBun/SunCalc). It contains all the code and the pdf file for the functions.
+The GitHub repository for SunCalc can be found [here](https://github.com/SoneyBun/SunCalc). It contains all the code and a zipped file for SunCalc using [7zip](https://www.7-zip.org).
 
 
 ## Supported Irrational Numbers
