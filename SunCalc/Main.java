@@ -9,7 +9,7 @@ public class Main {
         String terms = "";
         Storing store;
         Operation answer = new Operation(0, 0, "+");
-        boolean testing = true;
+        boolean testing = false;
 
         if (!testing) {
             try {
