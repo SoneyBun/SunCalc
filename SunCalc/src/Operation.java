@@ -167,40 +167,70 @@ public class Operation {
                 else {
                     return (rootOfANegative.toString());
                 }
-            case "pi" :
-                answer = (n1 * Math.PI);
+            case "apcon" :
+                answer = Irrational.apcon;
                 if(n2 != 0) {
-                    answer2 = (n2 * Math.PI);
-                    return (n1 + "pi = " + answer + "\n" + n2 + "pi = " + answer2);
+                    answer2 = (n2 * Irrational.apcon);
+                    return (n1 + "apcon = " + answer + "\n" + n2 + "apcon = " + answer2);
                 }
                 else {
                     answer2 = 0;
-                    return (n1 + "pi = " + answer);
+                    return (n1 + "apcon = " + answer);
                 }
             case "e" :
-                answer = (n1 * Math.E);
+                answer = (n1 * Irrational.e);
                 if(n2 != 0) {
-                    answer2 = (n2 * Math.E);
+                    answer2 = (n2 * Irrational.e);
                     return (n1 + "e = " + answer + "\n" + n2 + "e = " + answer2);
                 }
                 else {
                     answer2 = 0;
                     return (n1 + "e = " + answer);
                 }
-            case "phi" :
-                answer = (n1 * ((1 + Math.sqrt(5)) / 2));
+            case "g" :
+                answer = (n1 * Irrational.g);
                 if(n2 != 0) {
-                    answer2 = (n2 * ((1 + Math.sqrt(5)) / 2));
+                    answer2 = (n2 * Irrational.g);
+                    return (n1 + "g = " + answer + "\n" + n2 + "g = " + answer2);
+                }
+                else {
+                    answer2 = 0;
+                    return (n1 + "g = " + answer);
+                }
+            case "khincon" :
+                answer = (n1 * Irrational.khincon);
+                if(n2 != 0) {
+                    answer2 = (n2 * Irrational.khincon);
+                    return (n1 + "khincon = " + answer + "\n" + n2 + "khincon = " + answer2);
+                }
+                else {
+                    answer2 = 0;
+                    return (n1 + "khincon = " + answer);
+                }
+            case "phi" :
+                answer = (n1 * Irrational.phi);
+                if(n2 != 0) {
+                    answer2 = (n2 * Irrational.phi);
                     return (n1 + "phi = " + answer + "\n" + n2 + "phi = " + answer2);
                 }
                 else {
                     answer2 = 0;
                     return (n1 + "phi = " + answer);
                 }
-            case "pycon" :
-                answer = (n1 * (Math.sqrt(2)));
+            case "pi" :
+                answer = Irrational.pi;
                 if(n2 != 0) {
-                    answer2 = (n2 * (Math.sqrt(2)));
+                    answer2 = (n2 * Irrational.pi);
+                    return (n1 + "pi = " + answer + "\n" + n2 + "pi = " + answer2);
+                }
+                else {
+                    answer2 = 0;
+                    return (n1 + "pi = " + answer);
+                }
+            case "pycon" :
+                answer = (n1 * Irrational.pycon);
+                if(n2 != 0) {
+                    answer2 = (n2 * Irrational.pycon);
                     return (n1 + "pycon = " + answer + "\n" + n2 + "pycon = " + answer2);
                 }
                 else {
