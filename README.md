@@ -21,10 +21,6 @@ SunCalc can handle trigonometry and irrational numbers. A list of functions can 
 
 >The functions found in gray cannot be used in the CodeHS Variant.
 
-## CodeHS Variant
-
-The [CodeHS variant of SunCalc](https://bit.ly/SunCalcTesting) can handle the same math. However, due to CodeHS limitations, the functions auto open is removed, and many cases for functions had to be removed for memory reasons.
-
 ## Developers
 
 SunCalc was made thanks to [SoneyBun](https://github.com/SoneyBun) and [Skeledan](https://github.com/TheRealSkeledan). It is actively getting updated. Find more or even talk to us in the Discord server.
@@ -51,12 +47,7 @@ The GitHub repository for SunCalc can be found [here](https://github.com/SoneyBu
 
 ## Supported Irrational Numbers
 
-The following irrational numbers can be used in SunCalc. Only the first 15 digits will be shown.
-
-* **pi (**π**)** - 3.14159265358979
-* **e** - 2.71828182845904
-* **phi (Φ)** - 1.61803398874989
-* **pycon (√2)** - 1.414213562373095
+SunCalc has a library of Irrational numbers that is constantly getting updated. You can view it in Irration.java
 
 ## Factorial (!)
 
