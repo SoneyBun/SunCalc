@@ -44,10 +44,13 @@ public class Storing {
 
     public double getNum1() {
         switch (storeTerm.substring(0, storeTerm.indexOf(' ')).toLowerCase()) {
-            case "pi" : n1 = Math.PI;
-            case "e" : n1 = Math.E;
-            case "phi" : n1 = ((1 + Math.sqrt(5)) / 2);
-            case "pycon" : n1 = Math.sqrt(2);
+            case "apcon" : n1 = Irrational.apcon;
+            case "e" : n1 = Irrational.e;
+            case "g" : n1 = Irrational.g;
+            case "khincon" : n1 = Irrational.khincon;
+            case "phi" : n1 = Irrational.phi;
+            case "pi" : n1 = Irrational.pi;
+            case "pycon" : n1 = Irrational.pycon;
             case "ans", "answer" : n1 = answer;
             case "ans2", "answer2" : n1 = answer2;
             default :
@@ -67,10 +70,13 @@ public class Storing {
     public double getNum2() {
         if(nSpace == 2) {
             switch (newStoreTerm.substring(0, newStoreTerm.indexOf(' ')).toLowerCase()) {
-                case "pi" : n2 = Math.PI;
-                case "e" : n2 = Math.E;
-                case "phi" : n2 = ((1 + Math.sqrt(5)) / 2);
-                case "pycon" : n2 = Math.sqrt(2);
+                case "apcon" : n2 = Irrational.apcon;
+                case "e" : n2 = Irrational.e;
+                case "g" : n2 = Irrational.g;
+                case "khincon" : n2 = Irrational.khincon;
+                case "phi" : n2 = Irrational.phi;
+                case "pi" : n2 = Irrational.pi;
+                case "pycon" : n2 = Irrational.pycon;
                 case "ans", "answer" : n2 = answer;
                 case "ans2", "answer2" : n2 = answer2;
                 default :
