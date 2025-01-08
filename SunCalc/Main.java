@@ -9,7 +9,7 @@ public class Main {
         String terms = "";
         Storing store;
         Operation answer = new Operation(0, 0, "+");
-        boolean testing = false;
+        boolean testing = true;
 
         if (!testing) {
             try {
@@ -34,11 +34,15 @@ public class Main {
                 System.out.println("Thank you for using SunCalc");
                 System.exit(0);
             }
+            else if(terms.equalsIgnoreCase("help")) {
+                System.out.println("For any assistance, join the Discord server: https://bit.ly/SunCode\nView the Github repository at: https://github.com/SoneyBun/SunCalc");
+            }
+            else {
+                store = new Storing(terms, answer.getAnswer(), answer.getAnswer2());
+                answer = new Operation(store.getNum1(), store.getNum2(), store.getFunction());
 
-            store = new Storing(terms, answer.getAnswer(), answer.getAnswer2());
-            answer = new Operation(store.getNum1(), store.getNum2(), store.getFunction());
-
-            System.out.println(answer);
+                System.out.println(answer);
+            }
         }
     }
 }
