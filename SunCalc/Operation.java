@@ -77,15 +77,31 @@ public class Operation {
                 answer = (n1 % n2);
                 answer2 = (n2 % n1);
                 return (n1 + " % " + n2 + " = " + answer + "\n" + n2 + " % " + n1 + " = " + answer2);
-            case "||" :
+            case "||", "abval" :
                 answer = Math.abs(n1);
                 answer2 = 0;
                 return ("|" + n1 + "| = " + answer);
+            case "bmi" :
+                String weight;
+                answer = (n2 / Math.pow(n1, 2)) * 703;
+                answer2 = 0;
+
+                if(answer < 18.5) {
+                    weight = "Underweight";
+                }
+                else if(answer >= 18.5 && answer < 25) {
+                    weight = "Normal";
+                }
+                else if(answer >= 25 && answer < 30) {
+                    weight = "Overweight";
+                } else {
+                    weight = "Obese";
+                }
+                return ("BMI: " + answer + "kg/m^2\nWeight Class: " + weight);
             case "!", "factorial" :
                 BigInteger factorial = BigInteger.ONE;
                 BigInteger factorialTruncatedN1 = BigInteger.ONE;
                 BigInteger factorialRoundedN1 = BigInteger.ONE;
-
                 if(n1 >= 0) {
                     if(n1 == (int) n1) {
                         for(int i = 1; i <= (int) n1; i++) {
@@ -242,7 +258,7 @@ public class Operation {
                     answer2 = 0;
                     return (n1 + " rounded is " + answer);
                 }
-            case "truncate" :
+            case "trunc", "truncate" :
                 answer = (int) n1;
                 if(n2 != 0) {
                     answer2 = (int) n2;
