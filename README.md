@@ -8,9 +8,17 @@ What is Reverse Polish Notation? It is when you type the operator after the oper
 
 	2 2 +
 
-SunCalc Would print out
+SunCalc would print out
 
 	2.0 + 2.0 = 4.0
+
+However, some functions don't require a second number. For example
+
+	16 !
+
+Suncalc would print out
+
+	16.0! = 2.0922789888E13
 You can find out more about Reverse Polish Notation (RPN) [here](https://en.wikipedia.org/wiki/Reverse_Polish_notation).
 ## Functions
 
