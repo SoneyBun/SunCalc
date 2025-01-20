@@ -1,7 +1,6 @@
 import java.awt.Desktop;
 import java.net.URI;
 import java.util.Scanner;
-@SuppressWarnings("all")
 
 public class Main {
     public static void main(String[] args) {
@@ -21,7 +20,7 @@ public class Main {
                     System.out.println("Desktop is not supported on this system.");
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                e.fillInStackTrace();
             }
         }
 
@@ -30,7 +29,7 @@ public class Main {
         while(!(terms.equalsIgnoreCase("esc"))) {
             terms = scan.nextLine();
 
-            if(terms.equalsIgnoreCase("esc") || terms.equalsIgnoreCase("escape")) {
+            if(terms.equalsIgnoreCase("esc") || terms.equalsIgnoreCase("escape") || terms.isEmpty()) {
                 System.out.println("Thank you for using SunCalc");
                 System.exit(0);
             }
