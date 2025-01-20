@@ -30,16 +30,6 @@ SunCalc can handle trigonometry and irrational numbers. A list of functions can 
 
 SunCalc was made thanks to [SoneyBun](https://github.com/SoneyBun) and [Skeledan](https://github.com/TheRealSkeledan). It is actively getting updated. Find more or even talk to us in the Discord server.
 
-SoneyBun
-* Irrational.java
-* Main.java
-* Operation.java
-* Report.java
-* Storing.java
-
-Skeledan
-* Main.java Open-documentation feature
-
 ## Discord Server
 
 The [SunCode Discord server](https://bit.ly/SunCode) is a little fun laid back community hangout that also has a passion for all things computer science and cybersecurity.
@@ -50,10 +40,13 @@ The [SunCode Discord server](https://bit.ly/SunCode) is a little fun laid back c
 
 The GitHub repository for SunCalc can be found [here](https://github.com/SoneyBun/SunCalc). It contains all the code and a zipped file for SunCalc using [7zip](https://www.7-zip.org).
 
+##  BMI (Body Mass Index)
+
+SunCalc implements [BMICalculator](https://github.com/SoneyBun/BMICalculator) for the bmi function. The BMI function uses your weight and height to find your BMI and determines your weight class off of said BMI.
 
 ## Supported Irrational Numbers
 
-SunCalc has a library of Irrational numbers that is constantly getting updated. You can view it in Irration.java
+SunCalc has a library of Irrational numbers that is constantly getting updated. You can view it in Irrational.java
 
 ## Factorial (!)
 
