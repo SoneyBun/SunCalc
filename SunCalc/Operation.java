@@ -1,6 +1,5 @@
 import java.lang.Math;
 import java.math.BigInteger;
-@SuppressWarnings("all")
 
 public class Operation {
     private final double n1, n2;
@@ -76,8 +75,8 @@ public class Operation {
                 return ("" + answer);
             case "%", "modulus", "mod" :
                 answer = (n1 % n2);
-                answer2 = 0;
-                return (n1 + " % " + n2 + " = " + answer);
+                answer2 = (n2 % n1);
+                return (n1 + " % " + n2 + " = " + answer + "\n" + n2 + " % " + n1 + " = " + answer2);
             case "||" :
                 answer = Math.abs(n1);
                 answer2 = 0;
@@ -107,14 +106,12 @@ public class Operation {
                         for(int i = 1; i <= roundedN1; i++) {
                             factorialRoundedN1 = factorialRoundedN1.multiply(BigInteger.valueOf(i));
                         }
-
+                        answer = factorialTruncatedN1.doubleValue();
                         if(truncatedN1 != roundedN1) {
-                            answer = factorialTruncatedN1.doubleValue();
                             answer2 = factorialRoundedN1.doubleValue();
                             return (factorialOfADouble + "\nThe factorial of " + n1 + " truncated is \n" + truncatedN1 + "! = " + answer + "\nThe factorial of " + n1 + " rounded is \n" + roundedN1 + "! = " + answer2);
                         }
                         else {
-                            answer = factorialTruncatedN1.doubleValue();
                             answer2 = 0;
                             return (factorialOfADouble + "\nThe factorial of " + n1 + " truncated/rounded is \n" + truncatedN1 + "! = " + answer);
                         }
@@ -143,14 +140,12 @@ public class Operation {
                     for(int i = 1; i <= positiveRoundedN1; i++) {
                         factorialPositiveRoundedN1 = factorialPositiveRoundedN1.multiply(BigInteger.valueOf(i));
                     }
-
+                    answer = factorialPositiveTruncatedN1.doubleValue();
                     if(positiveTruncatedN1 != positiveRoundedN1) {
-                        answer = factorialPositiveTruncatedN1.doubleValue();
                         answer2 = factorialPositiveRoundedN1.doubleValue();
                         return (factorialOfADouble + "\n" + undefinedFactorialOfANegative + "\nThe factorial of " + n1 + " positive and truncated is \n" + positiveTruncatedN1 + "! = " + answer + "\nThe factorial of " + n1 + " positive and rounded is \n" + positiveRoundedN1 + "! = " + answer2);
                     }
                     else {
-                        answer = factorialPositiveTruncatedN1.doubleValue();
                         answer2 = 0;
                         return (factorialOfADouble + "\n" + undefinedFactorialOfANegative + "\nThe factorial of " + n1 + " positive and truncated/rounded is \n" + positiveTruncatedN1 + "! = " + answer);
                     }
@@ -168,9 +163,9 @@ public class Operation {
                     return (rootOfANegative.toString());
                 }
             case "apcon" :
-                answer = Irrational.apcon;
+                answer = Irrational.APCON;
                 if(n2 != 0) {
-                    answer2 = (n2 * Irrational.apcon);
+                    answer2 = (n2 * Irrational.APCON);
                     return (n1 + "apcon = " + answer + "\n" + n2 + "apcon = " + answer2);
                 }
                 else {
@@ -178,9 +173,9 @@ public class Operation {
                     return (n1 + "apcon = " + answer);
                 }
             case "e" :
-                answer = (n1 * Irrational.e);
+                answer = (n1 * Irrational.E);
                 if(n2 != 0) {
-                    answer2 = (n2 * Irrational.e);
+                    answer2 = (n2 * Irrational.E);
                     return (n1 + "e = " + answer + "\n" + n2 + "e = " + answer2);
                 }
                 else {
@@ -188,9 +183,9 @@ public class Operation {
                     return (n1 + "e = " + answer);
                 }
             case "g" :
-                answer = (n1 * Irrational.g);
+                answer = (n1 * Irrational.G);
                 if(n2 != 0) {
-                    answer2 = (n2 * Irrational.g);
+                    answer2 = (n2 * Irrational.G);
                     return (n1 + "g = " + answer + "\n" + n2 + "g = " + answer2);
                 }
                 else {
@@ -198,9 +193,9 @@ public class Operation {
                     return (n1 + "g = " + answer);
                 }
             case "khincon" :
-                answer = (n1 * Irrational.khincon);
+                answer = (n1 * Irrational.KHINCON);
                 if(n2 != 0) {
-                    answer2 = (n2 * Irrational.khincon);
+                    answer2 = (n2 * Irrational.KHINCON);
                     return (n1 + "khincon = " + answer + "\n" + n2 + "khincon = " + answer2);
                 }
                 else {
@@ -208,9 +203,9 @@ public class Operation {
                     return (n1 + "khincon = " + answer);
                 }
             case "phi" :
-                answer = (n1 * Irrational.phi);
+                answer = (n1 * Irrational.PHI);
                 if(n2 != 0) {
-                    answer2 = (n2 * Irrational.phi);
+                    answer2 = (n2 * Irrational.PHI);
                     return (n1 + "phi = " + answer + "\n" + n2 + "phi = " + answer2);
                 }
                 else {
@@ -218,9 +213,9 @@ public class Operation {
                     return (n1 + "phi = " + answer);
                 }
             case "pi" :
-                answer = Irrational.pi;
+                answer = Irrational.PI;
                 if(n2 != 0) {
-                    answer2 = (n2 * Irrational.pi);
+                    answer2 = (n2 * Irrational.PI);
                     return (n1 + "pi = " + answer + "\n" + n2 + "pi = " + answer2);
                 }
                 else {
@@ -228,9 +223,9 @@ public class Operation {
                     return (n1 + "pi = " + answer);
                 }
             case "pycon" :
-                answer = (n1 * Irrational.pycon);
+                answer = (n1 * Irrational.PYCON);
                 if(n2 != 0) {
-                    answer2 = (n2 * Irrational.pycon);
+                    answer2 = (n2 * Irrational.PYCON);
                     return (n1 + "pycon = " + answer + "\n" + n2 + "pycon = " + answer2);
                 }
                 else {
@@ -293,13 +288,15 @@ public class Operation {
                 answer = Math.tanh(n1);
                 answer2 = 0;
                 return ("tanh(" + n1 + ") = " + answer);
-            case "ln", "log_e" :
+            case "ln", "natlog" :
                 answer = Math.log(n1) / Math.log(Math.E);
                 answer2 = 0;
                 return ("ln(" + n1 + ") = " + answer);
             case "log" :
+                double logn1 = Math.log(n1);
+                double logn2 = Math.log(n2);
                 if(n2 == 10) {
-                    answer = Math.log(n1) / Math.log(n2);
+                    answer = logn1/logn2;
                     answer2 = 0;
                     return ("log(" + n1 + ") = " + answer);
                 }
@@ -311,8 +308,8 @@ public class Operation {
                             return ("log_" + n2 + "(" + n1 + ") = " + answer);
                         }
                         else {
-                            answer = Math.log(n1) / Math.log(n2);
-                            answer2 = Math.log(n2) / Math.log(n1);
+                            answer = logn1/logn2;
+                            answer2 = logn2/logn1;
                             return ("log_" + n2 + "(" + n1 + ") = " + answer + "\nlog_" + n1 + "(" + n2 + ") = " + answer2);
                         }
                     }
