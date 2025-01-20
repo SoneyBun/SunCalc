@@ -1,14 +1,8 @@
-import java.lang.Math;
-@SuppressWarnings("all")
+@SuppressWarnings({"UnusedAssignment", "CommentedOutCode"})
 
 public class Storing {
     private final String storeTerm;
     private final double answer, answer2;
-
-    private double n1, n2;
-    private String fn = "";
-
-    private int preNSpace, space1, space2;
     private final int nSpace;
 
     private final String newStoreTerm;
@@ -18,7 +12,7 @@ public class Storing {
         this.answer = answer;
         this.answer2 = answer2;
         this.newStoreTerm = storeTerm.substring(storeTerm.indexOf(' ') + 1);
-
+        int preNSpace = 0;
         for(int i = 0; i < storeTerm.length() - 1; i++) {
             if(storeTerm.charAt(i) == ' ') {
                 preNSpace++;
@@ -28,29 +22,16 @@ public class Storing {
         this.nSpace = preNSpace;
     }
 
-    public int getNSpace() {
-        return nSpace;
-    }
-
-    public int getSpace1() {
-        space1 = storeTerm.indexOf(' ');
-        return space1;
-    }
-
-    public int getSpace2() {
-        space2 = newStoreTerm.indexOf(' ') + storeTerm.indexOf(' ') + 1;
-        return space2;
-    }
-
     public double getNum1() {
+        double n1;
         switch (storeTerm.substring(0, storeTerm.indexOf(' ')).toLowerCase()) {
-            case "apcon" : n1 = Irrational.apcon;
-            case "e" : n1 = Irrational.e;
-            case "g" : n1 = Irrational.g;
-            case "khincon" : n1 = Irrational.khincon;
-            case "phi" : n1 = Irrational.phi;
-            case "pi" : n1 = Irrational.pi;
-            case "pycon" : n1 = Irrational.pycon;
+            case "apcon" : n1 = Irrational.APCON;
+            case "e" : n1 = Irrational.E;
+            case "g" : n1 = Irrational.G;
+            case "khincon" : n1 = Irrational.KHINCON;
+            case "phi" : n1 = Irrational.PHI;
+            case "pi" : n1 = Irrational.PI;
+            case "pycon" : n1 = Irrational.PYCON;
             case "ans", "answer" : n1 = answer;
             case "ans2", "answer2" : n1 = answer2;
             default :
@@ -63,20 +44,17 @@ public class Storing {
         return n1;
     }
 
-    public void setNum1(double newN1) {
-        this.n1 = newN1;
-    }
-
     public double getNum2() {
+        double n2;
         if(nSpace == 2) {
             switch (newStoreTerm.substring(0, newStoreTerm.indexOf(' ')).toLowerCase()) {
-                case "apcon" : n2 = Irrational.apcon;
-                case "e" : n2 = Irrational.e;
-                case "g" : n2 = Irrational.g;
-                case "khincon" : n2 = Irrational.khincon;
-                case "phi" : n2 = Irrational.phi;
-                case "pi" : n2 = Irrational.pi;
-                case "pycon" : n2 = Irrational.pycon;
+                case "apcon" : n2 = Irrational.APCON;
+                case "e" : n2 = Irrational.E;
+                case "g" : n2 = Irrational.G;
+                case "khincon" : n2 = Irrational.KHINCON;
+                case "phi" : n2 = Irrational.PHI;
+                case "pi" : n2 = Irrational.PI;
+                case "pycon" : n2 = Irrational.PYCON;
                 case "ans", "answer" : n2 = answer;
                 case "ans2", "answer2" : n2 = answer2;
                 default :
@@ -93,11 +71,8 @@ public class Storing {
         return n2;
     }
 
-    public void setNum2(double newN2) {
-        this.n2 = newN2;
-    }
-
     public String getFunction() {
+        String fn;
         if(nSpace == 2) {
             fn = storeTerm.substring(newStoreTerm.indexOf(' ') + storeTerm.indexOf(' ') + 2);
         }
@@ -106,4 +81,30 @@ public class Storing {
         }
         return fn.toLowerCase();
     }
+
+    /*
+    public void setNum1(double newN1) {
+        this.n1 = newN1;
+    }
+
+    public void setNum2(double newN2) {
+        this.n2 = newN2;
+    }
+
+    public int getNSpace() {
+        return nSpace;
+    }
+
+    public int getSpace1() {
+        int space1;
+        space1 = storeTerm.indexOf(' ');
+        return space1;
+    }
+
+    public int getSpace2() {
+        int space2;
+        space2 = newStoreTerm.indexOf(' ') + storeTerm.indexOf(' ') + 1;
+        return space2;
+    }
+     */
 }
