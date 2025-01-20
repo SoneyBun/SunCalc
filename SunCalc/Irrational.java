@@ -15,7 +15,7 @@ public class Irrational {
         BigDecimal sum = BigDecimal.ZERO;
 
         for (int n = 1; n <= 1000000; n++) {
-            BigDecimal term = BigDecimal.ONE.divide(BigDecimal.valueOf(n).pow(3), 100, RoundingMode.HALF_UP);  // Using high precision
+            BigDecimal term = BigDecimal.ONE.divide(BigDecimal.valueOf(n).pow(3), 100, RoundingMode.HALF_UP);
             sum = sum.add(term);
         }
         return sum;
