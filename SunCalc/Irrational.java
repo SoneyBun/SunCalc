@@ -1,16 +1,15 @@
 import java.lang.Math;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-@SuppressWarnings("all")
 
 public class Irrational {
-    public static final double apcon = approxApCon().setScale(15, RoundingMode.HALF_UP).doubleValue();
-    public static final double e = Math.E;
-    public static final double g = approxG();
-    public static final double khincon = approxKhinCon();
-    public static final double phi = ((1 + Math.sqrt(5)) / 2);
-    public static final double pi = Math.PI;
-    public static final double pycon = Math.sqrt(2);
+    public static final double APCON = approxApCon().setScale(15, RoundingMode.HALF_UP).doubleValue();
+    public static final double E = Math.E;
+    public static final double G = approxG();
+    public static final double KHINCON = approxKhinCon();
+    public static final double PHI = ((1 + Math.sqrt(5)) / 2);
+    public static final double PI = Math.PI;
+    public static final double PYCON = Math.sqrt(2);
 
     private static BigDecimal approxApCon() {
         BigDecimal sum = BigDecimal.ZERO;
