@@ -23,6 +23,7 @@ SunCalc can handle trigonometry and irrational numbers. A list of functions can 
 SunCalc was made thanks to [SoneyBun](https://github.com/SoneyBun) and [Skeledan](https://github.com/TheRealSkeledan). It is actively getting updated. Find more or even talk to us in the Discord server.
 
 SoneyBun
+* Irrational.java
 * Main.java
 * Operation.java
 * Report.java
