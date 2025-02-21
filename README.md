@@ -34,15 +34,15 @@ SunCalc was made thanks to [SoneyBun](https://github.com/SoneyBun) and [Skeledan
 
 The [SunCode Discord server](https://bit.ly/SunCode) is a little fun laid back community hangout that also has a passion for all things computer science and cybersecurity.
 
->Just make sure to join the Vuy Dynasty and not the Volkov Dynasty (We are at war with them).
-
 ## GitHub Repository
 
 The GitHub repository for SunCalc can be found [here](https://github.com/SoneyBun/SunCalc). It contains all the code and a zipped file for SunCalc using [7zip](https://www.7-zip.org).
 
-##  BMI (Body Mass Index)
+##  SunCalcHealth
 
-SunCalc implements [BMICalculator](https://github.com/SoneyBun/BMICalculator) for the bmi function. The BMI function uses your weight and height to find your BMI and determines your weight class off of said BMI.
+SunCalc implements [SunCalcHealth](https://github.com/SoneyBun/BMICalculator) for the BMI Calculator and Height Estimate feature.
+
+> Type "health" to access it.
 
 ## Supported Irrational Numbers
 
