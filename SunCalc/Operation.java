@@ -29,7 +29,7 @@ public class Operation {
                 answer = (n1 + n2);
                 answer2 = 0;
                 return (n1 + " + " + n2 + " = " + answer);
-            case "++", "increment" :
+            case "++", "increment, increase" :
                 answer = (n1 + 1);
                 answer2 = 0;
                 return (n1 + "++ = " + answer);
@@ -37,11 +37,11 @@ public class Operation {
                 answer = (n1 - n2);
                 answer2 = 0;
                 return (n1 + " - " + n2 + " = " + answer);
-            case "--", "decrement" :
+            case "--", "decrement, decrease" :
                 answer = (n1 - 1);
                 answer2 = 0;
                 return (n1 + "-- = " + answer);
-            case "*", "multiply", "times", "mult" :
+            case "*", "multiply", "times", "mult", "x" :
                 answer = (n1 * n2);
                 answer2 = 0;
                 return (n1 + " * " + n2 + " = " + answer);
@@ -52,7 +52,7 @@ public class Operation {
                     return (n1 + " / " + n2 + " = " + answer);
                 }
                 return ("" + undefinedDivideByZero);
-            case "//", "floordiv" :
+            case "//", "floordivide", "floordiv" :
                 answer = (int) (n1 / n2);
                 answer2 = 0;
                 if(n2 != 0) {
@@ -81,23 +81,6 @@ public class Operation {
                 answer = Math.abs(n1);
                 answer2 = 0;
                 return ("|" + n1 + "| = " + answer);
-            case "bmi" :
-                String weight;
-                answer = (n2 / Math.pow(n1, 2)) * 703;
-                answer2 = 0;
-
-                if(answer < 18.5) {
-                    weight = "Underweight";
-                }
-                else if(answer >= 18.5 && answer < 25) {
-                    weight = "Normal";
-                }
-                else if(answer >= 25 && answer < 30) {
-                    weight = "Overweight";
-                } else {
-                    weight = "Obese";
-                }
-                return ("BMI: " + answer + "kg/m^2\nWeight Class: " + weight);
             case "!", "factorial" :
                 BigInteger factorial = BigInteger.ONE;
                 BigInteger factorialTruncatedN1 = BigInteger.ONE;

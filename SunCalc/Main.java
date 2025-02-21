@@ -8,7 +8,8 @@ public class Main {
         String terms = "";
         Storing store;
         Operation answer = new Operation(0, 0, "+");
-        boolean testing = false;
+        boolean testing = true;
+        int choice = -1;
 
         if (!testing) {
             try {
@@ -36,7 +37,38 @@ public class Main {
             else if(terms.equalsIgnoreCase("help")) {
                 System.out.println("For any assistance, join the Discord server: https://bit.ly/SunCode\nView the Github repository at: https://github.com/SoneyBun/SunCalc");
             }
-            else {
+            else if(terms.equalsIgnoreCase("health")) {
+                System.out.println("Do NOT make medical decisions based off of any information given from this calculator. This is nothing but a coding project.");
+
+                try {
+                    if (Desktop.isDesktopSupported()) {
+                        Desktop desktop = Desktop.getDesktop();
+                        URI uri = new URI("https://www.unitconverters.net");
+                        desktop.browse(uri);
+                    } else {
+                        System.out.println("Desktop is not supported on this system.");
+                    }
+                } catch (Exception e) {
+                    e.fillInStackTrace();
+                }
+
+                Health.getMeasurementSystem();
+
+                while(choice != 0) {
+                    System.out.println("What would you like to do?\n(1) - Calculate Body Mass Index (BMI)\n(2) - Calculate Estimated Height");
+                    try {
+                        choice = Integer.parseInt(scan.nextLine());
+                    } catch (NumberFormatException e) {
+                        System.out.println("Invalid Option.");
+                    }
+
+                    if(choice == 1) {
+                        Health.calculateBMI();
+                    } else {
+                        Health.estimateHeight();
+                    }
+                }
+            } else {
                 store = new Storing(terms, answer.getAnswer(), answer.getAnswer2());
                 answer = new Operation(store.getNum1(), store.getNum2(), store.getFunction());
 
