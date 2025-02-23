@@ -8,7 +8,7 @@ public class Main {
         String terms = "";
         Storing store;
         Operation answer = new Operation(0, 0, "+");
-        boolean testing = true;
+        boolean testing = false;
         int choice = -1;
 
         if (!testing) {
@@ -38,7 +38,7 @@ public class Main {
                 System.out.println("For any assistance, join the Discord server: https://bit.ly/SunCode\nView the Github repository at: https://github.com/SoneyBun/SunCalc");
             }
             else if(terms.equalsIgnoreCase("health")) {
-                System.out.println("Do NOT make medical decisions based off of any information given from this calculator. This is nothing but a coding project.");
+                System.out.println("You will not be able to access the regular version of SunCalc\nDo NOT make medical decisions based off of any information given from this calculator. This is nothing but a coding project.");
 
                 try {
                     if (Desktop.isDesktopSupported()) {

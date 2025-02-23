@@ -12,16 +12,12 @@ public class Operation {
         this.fn = fn;
     }
 
-    private final Report unknownFunction = assignReport("Error - Unknown Function");
-    private final Report undefinedDivideByZero = assignReport("Undefined - Dividing By Zero");
-    private final Report undefinedFactorialOfANegative = assignReport("Undefined - Factorial Of A Negative");
-    private final Report factorialOfADouble = assignReport("Error - Factorial Of A Double");
-    private final Report rootOfANegative = assignReport("Error - Root Of A Negative");
-    private final Report undefinedNegativeBase = assignReport("Undefined - Negative Base");
-
-    public Report assignReport(String reason) {
-        return new Report(reason);
-    }
+    private final Report unknownFunction = new Report("Error - Unknown Function", 1);
+    private final Report undefinedDivideByZero = new Report("Undefined - Dividing By Zero", 2);
+    private final Report undefinedFactorialOfANegative = new Report("Undefined - Factorial Of A Negative", 2);
+    private final Report factorialOfADouble = new Report("Error - Factorial Of A Double", 2);
+    private final Report rootOfANegative = new Report("Error - Root Of A Negative", 2);
+    private final Report undefinedNegativeBase = new Report("Undefined - Negative Base", 3);
 
     public String toString() {
         switch (fn.toLowerCase()) {
