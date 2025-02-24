@@ -8,7 +8,7 @@ public class Main {
         String terms = "";
         Storing store;
         Operation answer = new Operation(0, 0, "+");
-        boolean testing = false;
+        boolean testing = true;
         int choice = -1;
 
         if (!testing) {
@@ -55,17 +55,23 @@ public class Main {
                 Health.getMeasurementSystem();
 
                 while(choice != 0) {
-                    System.out.println("What would you like to do?\n(1) - Calculate Body Mass Index (BMI)\n(2) - Calculate Estimated Height");
+                    System.out.println("What would you like to do?\n(1) - Calculate Body Mass Index (BMI)\n(2) - Basal Metabolic Rate (BMR)\n(3) - Calculate Estimated Height");
                     try {
                         choice = Integer.parseInt(scan.nextLine());
                     } catch (NumberFormatException e) {
                         System.out.println("Invalid Option.");
                     }
 
-                    if(choice == 1) {
-                        Health.calculateBMI();
-                    } else {
-                        Health.estimateHeight();
+                    switch (choice) {
+                        case 1 :
+                            Health.calculateBMI();
+                            break;
+                        case 2 :
+                            Health.calculateBMR();
+                            break;
+                        case 3 :
+                            Health.estimateHeight();
+                            break;
                     }
                 }
             } else {
