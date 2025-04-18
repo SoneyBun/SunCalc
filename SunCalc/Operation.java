@@ -44,17 +44,11 @@ public class Operation {
             case "/", "divide", "div" :
                 answer = (n1 / n2);
                 answer2 = 0;
-                if(n2 != 0) {
-                    return (n1 + " / " + n2 + " = " + answer);
-                }
-                return ("" + undefinedDivideByZero);
+                return (n2 != 0) ? (n1 + " / " + n2 + " = " + answer) : ("" + undefinedDivideByZero);
             case "//", "floordivide", "floordiv" :
                 answer = (int) (n1 / n2);
                 answer2 = 0;
-                if(n2 != 0) {
-                    return (n1 + " // " + n2 + " = " + answer);
-                }
-                return ("" + undefinedDivideByZero);
+                return (n2 != 0) ? (n1 + " // " + n2 + " = " + answer) : ("" + undefinedDivideByZero);
             case ">" : return ("" + (n1 > n2));
             case ">=" : return ("" + (n1 >= n2));
             case "<" : return ("" + (n1 < n2));
@@ -150,13 +144,7 @@ public class Operation {
                 return (n1 + "^" + n2 + " = " + answer);
             case "rt", "root" :
                 answer2 = 0;
-                if(n1 >= 0) {
-                    answer = Math.pow(n1, (1 / n2));
-                    return (n1 + "^(1.0/" + n2 + ") = " + answer);
-                }
-                else {
-                    return (rootOfANegative.toString());
-                }
+                return (n1 >= 0) ? (n1 + "^(1.0/" + n2 + ") = " + (Math.pow(n1, (1 / n2)))) : (rootOfANegative.toString());
             case "apcon" :
                 answer = Irrational.APCON;
                 if(n2 != 0) {
