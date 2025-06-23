@@ -1,4 +1,8 @@
-# SunCalc
+# 🚨 SUNCALC V2 IS OUTDATED AND WILL BE REPLACED BY V3 IN UPCOMING MONTHS
+
+
+
+# SunCalc 2
 
 SunCalc is a Reverse Polish Notation (RPN) calculator developed in Java. Unlike standard calculators, it requires operators to be placed after their operands, offering a unique approach to mathematical computations.
 
